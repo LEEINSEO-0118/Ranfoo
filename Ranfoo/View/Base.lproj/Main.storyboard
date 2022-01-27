@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tlH-W2-Ebf">
-                                <rect key="frame" x="0.0" y="88" width="414" height="544"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="594"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="kindCell" id="TFd-Be-mai">
@@ -31,7 +31,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="Ivf-YR-7bB">
-                                <rect key="frame" x="55.5" y="662" width="303" height="80"/>
+                                <rect key="frame" x="55.5" y="712" width="303" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="GEq-Ff-Hfo">
                                         <rect key="frame" x="0.0" y="24" width="149" height="32"/>
@@ -73,11 +73,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ivf-YR-7bB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5cU-mC-x4B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ivf-YR-7bB" secondAttribute="bottom" constant="120" id="7sg-F8-VyL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ivf-YR-7bB" secondAttribute="bottom" constant="70" id="Edm-1D-X5C"/>
                             <constraint firstItem="tlH-W2-Ebf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UOB-fI-mMM"/>
                             <constraint firstItem="tlH-W2-Ebf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="feo-0C-Vsw"/>
+                            <constraint firstItem="Ivf-YR-7bB" firstAttribute="top" secondItem="tlH-W2-Ebf" secondAttribute="bottom" constant="30" id="h6E-BH-TaN"/>
                             <constraint firstItem="tlH-W2-Ebf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ie0-I5-Vp8"/>
-                            <constraint firstItem="Ivf-YR-7bB" firstAttribute="top" secondItem="tlH-W2-Ebf" secondAttribute="bottom" constant="30" id="shG-xy-bV8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="🍜Ranfoo" id="7K7-Id-Tro"/>
