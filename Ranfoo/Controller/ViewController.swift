@@ -50,6 +50,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return kindArray.count
     }
@@ -57,6 +58,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "kindCell", for: indexPath)
         cell.textLabel?.text = kindArray[indexPath.row]
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 18.0)
         return cell
     }
     
