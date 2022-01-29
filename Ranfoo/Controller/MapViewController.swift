@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MTMapViewDelegate {
     
     var mapView: MTMapView!
 

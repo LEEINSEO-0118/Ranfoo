@@ -34,7 +34,7 @@ class StoreListViewController: UIViewController {
 
 //MARK: - UITableViewDatatSource
 
-extension ViewController: UITableViewDataSource {
+extension StoreListViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,7 +49,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(Int(tableView.bounds.size.height) / kindArray.count)
+        return CGFloat(Int(tableView.bounds.size.height) / storeArray.count)
     }
     
 }
@@ -57,7 +57,7 @@ extension ViewController: UITableViewDataSource {
 
 //MARK: - UITableViewDelegate
 
-extension ViewController: UITableViewDelegate {
+extension StoreListViewController: UITableViewDelegate {
     
 //    @IBAction func URLButtonPressed(_ sender: UIButton) {
 //        if let url = URL(string: "kakaomap://place?id=7813422") {
