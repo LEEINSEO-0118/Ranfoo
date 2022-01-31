@@ -16,17 +16,14 @@ class StoreListViewController: UIViewController {
 
     override func viewDidLoad() {
         
+        storeListTableView.dataSource = self
+        storeListTableView.delegate = self
+        
         super.viewDidLoad()
     }
     
     @IBAction func reloadButtonPressed(_ sender: UIButton) {
         
-        guard let mvc = storyboard?.instantiateViewController(withIdentifier: "MapVC") else {
-            return
-        }
-        mvc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        
-        present(mvc, animated: true)
     }
 
 }
@@ -59,11 +56,21 @@ extension StoreListViewController: UITableViewDataSource {
 
 extension StoreListViewController: UITableViewDelegate {
     
-//    @IBAction func URLButtonPressed(_ sender: UIButton) {
-//        if let url = URL(string: "kakaomap://place?id=7813422") {
-//            UIApplication.shared.open(url, options: [:])
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let url = URL(string: "kakaomap://open?page=placeSearch") {
+            UIApplication.shared.open(url, options: [:])
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+//        guard let mVC = storyboard?.instantiateViewController(withIdentifier: "MapVC") else {
+//            return
 //        }
-//    }
+//        mVC.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+//
+//        present(mVC, animated: true)
+        
+    }
 
 }
 

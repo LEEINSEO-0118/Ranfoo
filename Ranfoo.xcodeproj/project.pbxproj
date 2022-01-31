@@ -50,6 +50,8 @@
 		53BA811827A5596A006145E3 /* daum_th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 53BA80FC27A5596A006145E3 /* daum_th_line.png */; };
 		53BA811927A5596A006145E3 /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 53BA80FD27A5596A006145E3 /* map_pin_shadow.png */; };
 		53BA811A27A5596A006145E3 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BA80FE27A5596A006145E3 /* DaumMap.framework */; };
+		53BA811C27A7F06B006145E3 /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA811B27A7F06B006145E3 /* ListManager.swift */; };
+		53BA811E27A7F472006145E3 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA811D27A7F472006145E3 /* ListData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +109,8 @@
 		53BA80FC27A5596A006145E3 /* daum_th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_th_line.png; sourceTree = "<group>"; };
 		53BA80FD27A5596A006145E3 /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
 		53BA80FE27A5596A006145E3 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		53BA811B27A7F06B006145E3 /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
+		53BA811D27A7F472006145E3 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,8 @@
 		534D830727A2A986003F5080 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				53BA811B27A7F06B006145E3 /* ListManager.swift */,
+				53BA811D27A7F472006145E3 /* ListData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -359,6 +365,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				534D830D27A2AD25003F5080 /* StoreListViewController.swift in Sources */,
+				53BA811E27A7F472006145E3 /* ListData.swift in Sources */,
+				53BA811C27A7F06B006145E3 /* ListManager.swift in Sources */,
 				534D82F827A1ABEB003F5080 /* ViewController.swift in Sources */,
 				534D82F427A1ABEB003F5080 /* AppDelegate.swift in Sources */,
 				534D836B27A40A1A003F5080 /* MapViewController.swift in Sources */,

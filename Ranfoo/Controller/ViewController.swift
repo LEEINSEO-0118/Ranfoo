@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
     
@@ -13,12 +14,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var kindTableView: UITableView!
     @IBOutlet weak var numberStepper: UIStepper!
     
-    var kindArray = ["한식", "양식", "중식", "일식", "기타"]
+    var kindArray = ["한식", "양식", "중식", "일식", "치킨", "기타"]
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         
         kindTableView.dataSource = self
         kindTableView.delegate = self
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
+        locationManager.requestWhenInUseAuthorization() // 위치 사용 허용 알림
+        locationManager.requestLocation()
         
         numberStepper.value = 5.0   // UIStepper 객체를 위에 생성해주어야 시작 값을 설정해줄 수 있다.
         
@@ -31,6 +38,9 @@ class ViewController: UIViewController {
         numberLabel.text = String(format: "%.0f", sender.value)
     }
     
+    @IBAction func locationPressed(_ sender: UIButton) {
+        locationManager.requestLocation()
+    }
     
     @IBAction func randomPressed(_ sender: UIButton) {
         
@@ -82,6 +92,26 @@ extension ViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
+}
+
+
+//MARK: -CLLocationManagerDelegate
+
+extension ViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            locationManager.stopUpdatingLocation()
+            print("위치 업데이트!")
+            print("위도 : \(location.coordinate.latitude)")
+            print("경도 : \(location.coordinate.longitude)")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error")
+    }
+    
 }
 
 
