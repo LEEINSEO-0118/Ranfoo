@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		363EAEAE69EE21B5FDD7251B /* Pods_Ranfoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDED20110C86FCBCCE4159D /* Pods_Ranfoo.framework */; };
+		534158A527AA778900AF7024 /* Pods_Ranfoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDED20110C86FCBCCE4159D /* Pods_Ranfoo.framework */; };
 		534D82F427A1ABEB003F5080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F327A1ABEB003F5080 /* AppDelegate.swift */; };
 		534D82F627A1ABEB003F5080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F527A1ABEB003F5080 /* SceneDelegate.swift */; };
 		534D82F827A1ABEB003F5080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F727A1ABEB003F5080 /* ViewController.swift */; };
@@ -55,6 +57,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2CDED20110C86FCBCCE4159D /* Pods_Ranfoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ranfoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5341589D27AA773F00AF7024 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		534158A127AA777F00AF7024 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		534D82F027A1ABEB003F5080 /* Ranfoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ranfoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534D82F327A1ABEB003F5080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		534D82F527A1ABEB003F5080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +116,8 @@
 		53BA80FE27A5596A006145E3 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		53BA811B27A7F06B006145E3 /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
 		53BA811D27A7F472006145E3 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
+		89011FC3309D3833E710D055 /* Pods-Ranfoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranfoo.release.xcconfig"; path = "Target Support Files/Pods-Ranfoo/Pods-Ranfoo.release.xcconfig"; sourceTree = "<group>"; };
+		8AAF0A211C239B472C97B313 /* Pods-Ranfoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranfoo.debug.xcconfig"; path = "Target Support Files/Pods-Ranfoo/Pods-Ranfoo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				534158A527AA778900AF7024 /* Pods_Ranfoo.framework in Frameworks */,
 				534D831A27A406F2003F5080 /* QuartzCore.framework in Frameworks */,
 				534D831E27A40750003F5080 /* libc++.tbd in Frameworks */,
 				53BA811A27A5596A006145E3 /* DaumMap.framework in Frameworks */,
@@ -126,6 +134,7 @@
 				534D831F27A40758003F5080 /* libxml2.tbd in Frameworks */,
 				534D831627A406C9003F5080 /* SystemConfiguration.framework in Frameworks */,
 				534D831427A4069A003F5080 /* OpenGLES.framework in Frameworks */,
+				363EAEAE69EE21B5FDD7251B /* Pods_Ranfoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +148,7 @@
 				534D82F227A1ABEB003F5080 /* Ranfoo */,
 				534D82F127A1ABEB003F5080 /* Products */,
 				534D831227A4069A003F5080 /* Frameworks */,
+				9383B4268A11F706B42CE005 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +206,8 @@
 		534D831227A4069A003F5080 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				534158A127AA777F00AF7024 /* Alamofire.framework */,
+				5341589D27AA773F00AF7024 /* Alamofire.framework */,
 				534D831D27A40725003F5080 /* libsqlite3.tbd */,
 				534D831C27A4071C003F5080 /* libxml2.tbd */,
 				534D831B27A40703003F5080 /* libc++.tbd */,
@@ -203,6 +215,7 @@
 				534D831727A406E2003F5080 /* CoreLocation.framework */,
 				534D831527A406C9003F5080 /* SystemConfiguration.framework */,
 				534D831327A4069A003F5080 /* OpenGLES.framework */,
+				2CDED20110C86FCBCCE4159D /* Pods_Ranfoo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,6 +279,15 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		9383B4268A11F706B42CE005 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AAF0A211C239B472C97B313 /* Pods-Ranfoo.debug.xcconfig */,
+				89011FC3309D3833E710D055 /* Pods-Ranfoo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -273,9 +295,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 534D830427A1ABED003F5080 /* Build configuration list for PBXNativeTarget "Ranfoo" */;
 			buildPhases = (
+				69D9A07DBC3B8894DE2C9D39 /* [CP] Check Pods Manifest.lock */,
 				534D82EC27A1ABEB003F5080 /* Sources */,
 				534D82ED27A1ABEB003F5080 /* Frameworks */,
 				534D82EE27A1ABEB003F5080 /* Resources */,
+				69D4EA87D033FA5FD0246A6A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -358,6 +382,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69D4EA87D033FA5FD0246A6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ranfoo/Pods-Ranfoo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ranfoo/Pods-Ranfoo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ranfoo/Pods-Ranfoo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69D9A07DBC3B8894DE2C9D39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ranfoo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		534D82EC27A1ABEB003F5080 /* Sources */ = {
@@ -516,6 +582,7 @@
 		};
 		534D830527A1ABED003F5080 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AAF0A211C239B472C97B313 /* Pods-Ranfoo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -551,6 +618,7 @@
 		};
 		534D830627A1ABED003F5080 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89011FC3309D3833E710D055 /* Pods-Ranfoo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
