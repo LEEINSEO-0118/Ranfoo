@@ -59,19 +59,21 @@ extension StoreListViewController: UITableViewDataSource {
 extension StoreListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ListCell
+        cell.selectionStyle = .none
         
-        if let url = URL(string: "kakaomap://open?page=placeSearch") {
-            UIApplication.shared.open(url, options: [:])
-        }
-        tableView.deselectRow(at: indexPath, animated: true)
+        // 만약 true면 parentVC의 view 위에 표시
+        self.definesPresentationContext = true
         
-//        guard let mVC = storyboard?.instantiateViewController(withIdentifier: "MapVC") else {
-//            return
-//        }
-//        mVC.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-//
-//        present(mVC, animated: true)
+        let mapVC = MapViewController()
+
+        present(mapVC, animated: true)
         
+        
+        //        if let url = URL(string: "kakaomap://open?page=placeSearch") {
+        //            UIApplication.shared.open(url, options: [:])
+        //        }
+        //        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }

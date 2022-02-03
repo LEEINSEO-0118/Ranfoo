@@ -19,12 +19,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Et4-Js-aNo">
-                        <rect key="frame" x="0.0" y="0.0" width="318" height="65"/>
+                        <rect key="frame" x="5" y="5" width="308" height="55"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xO-8S-gFn">
-                                <rect key="frame" x="10" y="0.0" width="260" height="65"/>
+                                <rect key="frame" x="15" y="0.0" width="230" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="YQw-R3-OWa"/>
+                                    <constraint firstAttribute="width" constant="230" id="cYK-Dx-oQq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -33,13 +33,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90768857284919502" green="0.52129374366813175" blue="0.41867163261160356" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="3xO-8S-gFn" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="10" id="KjX-PF-Lzb"/>
                             <constraint firstAttribute="bottom" secondItem="3xO-8S-gFn" secondAttribute="bottom" id="Qih-YC-Ynq"/>
+                            <constraint firstItem="3xO-8S-gFn" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="15" id="ayL-5F-RS8"/>
                             <constraint firstItem="3xO-8S-gFn" firstAttribute="top" secondItem="Et4-Js-aNo" secondAttribute="top" id="vbO-bv-255"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXv-Cs-XPR">
-                        <rect key="frame" x="268" y="12.5" width="40" height="40"/>
+                        <rect key="frame" x="263" y="12.5" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="aKe-kv-aan"/>
                             <constraint firstAttribute="height" constant="40" id="oYm-0K-etR"/>
@@ -52,12 +52,12 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="XXv-Cs-XPR" secondAttribute="trailing" constant="10" id="7VY-Iu-v7l"/>
-                    <constraint firstAttribute="bottom" secondItem="Et4-Js-aNo" secondAttribute="bottom" id="8W0-M5-hZj"/>
-                    <constraint firstAttribute="trailing" secondItem="Et4-Js-aNo" secondAttribute="trailing" id="Du9-2Y-LSR"/>
-                    <constraint firstItem="Et4-Js-aNo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SNX-71-49X"/>
-                    <constraint firstItem="Et4-Js-aNo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Wku-65-1lf"/>
+                    <constraint firstAttribute="bottom" secondItem="Et4-Js-aNo" secondAttribute="bottom" constant="5" id="GH0-Ld-Otz"/>
+                    <constraint firstItem="Et4-Js-aNo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="HlS-Gj-IrB"/>
+                    <constraint firstItem="Et4-Js-aNo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="K15-wG-AiX"/>
+                    <constraint firstAttribute="trailing" secondItem="XXv-Cs-XPR" secondAttribute="trailing" constant="15" id="Zrz-cX-HAv"/>
                     <constraint firstItem="XXv-Cs-XPR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qX9-PR-KzS"/>
+                    <constraint firstAttribute="trailing" secondItem="Et4-Js-aNo" secondAttribute="trailing" constant="5" id="wXw-Rm-3ae"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -66,7 +66,7 @@
                 <outlet property="label" destination="3xO-8S-gFn" id="IeV-G0-oG1"/>
                 <outlet property="listBubble" destination="Et4-Js-aNo" id="9Bb-Sa-95t"/>
             </connections>
-            <point key="canvasLocation" x="-116" y="-39"/>
+            <point key="canvasLocation" x="-52" y="-67"/>
         </tableViewCell>
     </objects>
     <resources>

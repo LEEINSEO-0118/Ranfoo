@@ -14,8 +14,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var kindTableView: UITableView!
     @IBOutlet weak var numberStepper: UIStepper!
     
-    var kindArray = ["한식", "양식", "중식", "일식", "치킨", "기타"]
+    var kindArray = ["한식", "양식", "중식", "일식", "세계음식", "치킨", "기타"]
     var locationManager = CLLocationManager()
+    
+    let listManager = ListManager()
     
     override func viewDidLoad() {
         
@@ -27,6 +29,8 @@ class ViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
         locationManager.requestWhenInUseAuthorization() // 위치 사용 허용 알림
         locationManager.requestLocation()
+        
+        listManager.getList()
         
         numberStepper.value = 5.0   // UIStepper 객체를 위에 생성해주어야 시작 값을 설정해줄 수 있다.
         
@@ -91,21 +95,21 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! ListCell
-        
         if cell.checkButton.isHidden == false {
             cell.checkButton.isHidden = true
         } else {
             cell.checkButton.isHidden = false
         }
-
-        tableView.reloadData()
-        tableView.deselectRow(at: indexPath, animated: true)
+        cell.selectionStyle = .none
+//        tableView.reloadData()
+//        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
 
 }
 
 
-//MARK: -CLLocationManagerDelegate
+//MARK: - CLLocationManagerDelegate
 
 extension ViewController: CLLocationManagerDelegate {
     

@@ -18,7 +18,7 @@ class ListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
+        listBubble.layer.cornerRadius = listBubble.frame.size.height / 4
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
