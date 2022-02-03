@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         
         kindTableView.dataSource = self
         kindTableView.delegate = self
+        kindTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
@@ -52,7 +53,7 @@ class ViewController: UIViewController {
     }
     
     
-    
+//    var cell = ListCell()
 }
 
 
@@ -61,15 +62,18 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return kindArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "kindCell", for: indexPath)
-        cell.textLabel?.text = kindArray[indexPath.row]
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 18.0)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! ListCell
+        cell.label.text = kindArray[indexPath.row]
+        cell.label.font = UIFont.systemFont(ofSize: 18.0)
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -82,13 +86,19 @@ extension ViewController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 
 extension ViewController: UITableViewDelegate {
+    
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        
+        let cell = tableView.cellForRow(at: indexPath) as! ListCell
+        
+        if cell.checkButton.isHidden == false {
+            cell.checkButton.isHidden = true
         } else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+            cell.checkButton.isHidden = false
         }
+
+        tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
     }
 

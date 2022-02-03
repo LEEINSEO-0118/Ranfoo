@@ -18,6 +18,7 @@ class StoreListViewController: UIViewController {
         
         storeListTableView.dataSource = self
         storeListTableView.delegate = self
+        storeListTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
         
         super.viewDidLoad()
     }
@@ -39,9 +40,10 @@ extension StoreListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "storeCell", for: indexPath)
-        cell.textLabel?.text = storeArray[indexPath.row]
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 18.0)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! ListCell
+        cell.checkButton.isHidden = true
+        cell.label.text = storeArray[indexPath.row]
+        cell.label.font = UIFont.systemFont(ofSize: 18.0)
         return cell
     }
     

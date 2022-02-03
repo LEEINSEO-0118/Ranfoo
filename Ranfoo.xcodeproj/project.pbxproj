@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		363EAEAE69EE21B5FDD7251B /* Pods_Ranfoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDED20110C86FCBCCE4159D /* Pods_Ranfoo.framework */; };
 		534158A527AA778900AF7024 /* Pods_Ranfoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDED20110C86FCBCCE4159D /* Pods_Ranfoo.framework */; };
+		534158A927ABA34200AF7024 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534158A727ABA34200AF7024 /* ListCell.swift */; };
+		534158AA27ABA34200AF7024 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534158A827ABA34200AF7024 /* ListCell.xib */; };
+		534158AC27ABA8A600AF7024 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534158AB27ABA8A600AF7024 /* Constants.swift */; };
 		534D82F427A1ABEB003F5080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F327A1ABEB003F5080 /* AppDelegate.swift */; };
 		534D82F627A1ABEB003F5080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F527A1ABEB003F5080 /* SceneDelegate.swift */; };
 		534D82F827A1ABEB003F5080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F727A1ABEB003F5080 /* ViewController.swift */; };
@@ -60,6 +63,9 @@
 		2CDED20110C86FCBCCE4159D /* Pods_Ranfoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ranfoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5341589D27AA773F00AF7024 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		534158A127AA777F00AF7024 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		534158A727ABA34200AF7024 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		534158A827ABA34200AF7024 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		534158AB27ABA8A600AF7024 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		534D82F027A1ABEB003F5080 /* Ranfoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ranfoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534D82F327A1ABEB003F5080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		534D82F527A1ABEB003F5080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 				534D830727A2A986003F5080 /* Models */,
 				534D830827A2A992003F5080 /* View */,
 				534D830927A2A99C003F5080 /* Controller */,
+				534158AB27ABA8A600AF7024 /* Constants.swift */,
 			);
 			path = Ranfoo;
 			sourceTree = "<group>";
@@ -189,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				534D82F927A1ABEB003F5080 /* Main.storyboard */,
+				534158A727ABA34200AF7024 /* ListCell.swift */,
+				534158A827ABA34200AF7024 /* ListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53BA811527A5596A006145E3 /* map_present.png in Resources */,
+				534158AA27ABA34200AF7024 /* ListCell.xib in Resources */,
 				53BA810B27A5596A006145E3 /* map_pin@3x.png in Resources */,
 				53BA810927A5596A006145E3 /* map_pin_red@3x.png in Resources */,
 				53BA811427A5596A006145E3 /* map_pin.png in Resources */,
@@ -435,8 +445,10 @@
 				53BA811C27A7F06B006145E3 /* ListManager.swift in Sources */,
 				534D82F827A1ABEB003F5080 /* ViewController.swift in Sources */,
 				534D82F427A1ABEB003F5080 /* AppDelegate.swift in Sources */,
+				534158A927ABA34200AF7024 /* ListCell.swift in Sources */,
 				534D836B27A40A1A003F5080 /* MapViewController.swift in Sources */,
 				534D82F627A1ABEB003F5080 /* SceneDelegate.swift in Sources */,
+				534158AC27ABA8A600AF7024 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
