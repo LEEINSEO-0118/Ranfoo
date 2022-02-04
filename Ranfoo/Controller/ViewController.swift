@@ -28,9 +28,7 @@ class ViewController: UIViewController {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
         locationManager.requestWhenInUseAuthorization() // 위치 사용 허용 알림
-        locationManager.requestLocation()
-        
-        listManager.getList()
+        locationManager.requestLocation() // location을 요청하는 동시에 getList()까지 실행
         
         numberStepper.value = 5.0   // UIStepper 객체를 위에 생성해주어야 시작 값을 설정해줄 수 있다.
         
@@ -116,9 +114,12 @@ extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             locationManager.stopUpdatingLocation()
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
             print("위치 업데이트!")
-            print("위도 : \(location.coordinate.latitude)")
-            print("경도 : \(location.coordinate.longitude)")
+            print("위도 : \(lat)")
+            print("경도 : \(lon)")
+            listManager.fetchList(latitude: lat, longitude: lon)
         }
     }
     

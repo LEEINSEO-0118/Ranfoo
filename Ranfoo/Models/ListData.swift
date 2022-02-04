@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct ListData {
+struct ListData: Codable {
     
-    let placeName: String = ""
+    let documents: [Documents]
     
+}
+
+struct Documents: Codable {
+    let id: String
+    let place_name: String
 }

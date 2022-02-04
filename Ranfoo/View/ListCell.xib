@@ -22,10 +22,7 @@
                         <rect key="frame" x="5" y="5" width="308" height="55"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xO-8S-gFn">
-                                <rect key="frame" x="15" y="0.0" width="230" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="cYK-Dx-oQq"/>
-                                </constraints>
+                                <rect key="frame" x="15" y="0.0" width="223" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -33,8 +30,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90768857284919502" green="0.52129374366813175" blue="0.41867163261160356" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3xO-8S-gFn" secondAttribute="trailing" constant="70" id="8Ry-ht-Qhm"/>
                             <constraint firstAttribute="bottom" secondItem="3xO-8S-gFn" secondAttribute="bottom" id="Qih-YC-Ynq"/>
                             <constraint firstItem="3xO-8S-gFn" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="15" id="ayL-5F-RS8"/>
+                            <constraint firstAttribute="trailing" secondItem="3xO-8S-gFn" secondAttribute="trailing" constant="70" id="dKu-GD-N1R"/>
                             <constraint firstItem="3xO-8S-gFn" firstAttribute="top" secondItem="Et4-Js-aNo" secondAttribute="top" id="vbO-bv-255"/>
                         </constraints>
                     </view>
@@ -49,6 +48,9 @@
                         <buttonConfiguration key="configuration" style="plain">
                             <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="large"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="checkButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="l1i-B6-pZ8"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -66,7 +68,7 @@
                 <outlet property="label" destination="3xO-8S-gFn" id="IeV-G0-oG1"/>
                 <outlet property="listBubble" destination="Et4-Js-aNo" id="9Bb-Sa-95t"/>
             </connections>
-            <point key="canvasLocation" x="-52" y="-67"/>
+            <point key="canvasLocation" x="-52.173913043478265" y="-67.299107142857139"/>
         </tableViewCell>
     </objects>
     <resources>

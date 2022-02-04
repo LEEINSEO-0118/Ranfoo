@@ -13,8 +13,6 @@ class ListCell: UITableViewCell {
     @IBOutlet var label: UILabel!
     @IBOutlet var checkButton: UIButton!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -25,6 +23,16 @@ class ListCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func checkButtonPressed(_ sender: UIButton) {
+        
+        if checkButton.isHidden == false {
+            checkButton.isHidden = true
+        } else {
+            checkButton.isHidden = false
+        }
+        
     }
     
 }
