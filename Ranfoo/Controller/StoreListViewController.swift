@@ -7,7 +7,10 @@
 
 import UIKit
 
+
 class StoreListViewController: UIViewController {
+    
+    
     
     var storeArray = ["혜화문 식당", "BHC", "BBQ", "한반도", "샐러디"]
     
@@ -24,6 +27,10 @@ class StoreListViewController: UIViewController {
     }
     
     @IBAction func reloadButtonPressed(_ sender: UIButton) {
+        
+        if let url = URL(string: "http://place.map.kakao.com/106874655") { // 카카오 맵으로 연결되는 url
+            UIApplication.shared.open(url, options: [:])
+        }
         
     }
 
@@ -68,12 +75,9 @@ extension StoreListViewController: UITableViewDelegate {
         let mapVC = MapViewController()
 
         present(mapVC, animated: true)
-        
-        
-        //        if let url = URL(string: "kakaomap://open?page=placeSearch") {
-        //            UIApplication.shared.open(url, options: [:])
-        //        }
-        //        tableView.deselectRow(at: indexPath, animated: true)
+
+        tableView.deselectRow(at: indexPath, animated: true)
+               
     }
 
 }

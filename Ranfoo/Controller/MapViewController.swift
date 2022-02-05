@@ -19,6 +19,7 @@ class MapViewController: UIViewController, MTMapViewDelegate {
         mapView.baseMapType = .standard
         self.view.addSubview(mapView)
         
+        
     }
     
 

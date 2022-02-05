@@ -14,10 +14,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var kindTableView: UITableView!
     @IBOutlet weak var numberStepper: UIStepper!
     
-    var kindArray = ["한식", "양식", "중식", "일식", "세계음식", "치킨", "기타"]
+    var kindArray = ["한식", "중식", "일식", "양식", "아시아음식", "치킨", "술집"]
     var locationManager = CLLocationManager()
     
-    let listManager = ListManager()
+    var listManager = ListManager()
     
     override func viewDidLoad() {
         
@@ -128,5 +128,8 @@ extension ViewController: CLLocationManagerDelegate {
     }
     
 }
+
+//MARK: - ListManagerDelagate
+
 
 

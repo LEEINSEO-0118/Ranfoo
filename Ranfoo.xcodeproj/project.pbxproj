@@ -12,6 +12,8 @@
 		534158A927ABA34200AF7024 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534158A727ABA34200AF7024 /* ListCell.swift */; };
 		534158AA27ABA34200AF7024 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534158A827ABA34200AF7024 /* ListCell.xib */; };
 		534158AC27ABA8A600AF7024 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534158AB27ABA8A600AF7024 /* Constants.swift */; };
+		534158AE27AE632A00AF7024 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534158AD27AE632A00AF7024 /* Metal.framework */; };
+		534158B027AE63EB00AF7024 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534158AF27AE63EB00AF7024 /* ListModel.swift */; };
 		534D82F427A1ABEB003F5080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F327A1ABEB003F5080 /* AppDelegate.swift */; };
 		534D82F627A1ABEB003F5080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F527A1ABEB003F5080 /* SceneDelegate.swift */; };
 		534D82F827A1ABEB003F5080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F727A1ABEB003F5080 /* ViewController.swift */; };
@@ -19,7 +21,6 @@
 		534D82FD27A1ABED003F5080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 534D82FC27A1ABED003F5080 /* Assets.xcassets */; };
 		534D830027A1ABED003F5080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534D82FE27A1ABED003F5080 /* LaunchScreen.storyboard */; };
 		534D830D27A2AD25003F5080 /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D830C27A2AD25003F5080 /* StoreListViewController.swift */; };
-		534D831427A4069A003F5080 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534D831327A4069A003F5080 /* OpenGLES.framework */; };
 		534D831627A406C9003F5080 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534D831527A406C9003F5080 /* SystemConfiguration.framework */; };
 		534D831827A406E2003F5080 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534D831727A406E2003F5080 /* CoreLocation.framework */; };
 		534D831A27A406F2003F5080 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534D831927A406F2003F5080 /* QuartzCore.framework */; };
@@ -66,6 +67,8 @@
 		534158A727ABA34200AF7024 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		534158A827ABA34200AF7024 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		534158AB27ABA8A600AF7024 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		534158AD27AE632A00AF7024 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		534158AF27AE63EB00AF7024 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		534D82F027A1ABEB003F5080 /* Ranfoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ranfoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534D82F327A1ABEB003F5080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		534D82F527A1ABEB003F5080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				534158A527AA778900AF7024 /* Pods_Ranfoo.framework in Frameworks */,
+				534158AE27AE632A00AF7024 /* Metal.framework in Frameworks */,
 				534D831A27A406F2003F5080 /* QuartzCore.framework in Frameworks */,
 				534D831E27A40750003F5080 /* libc++.tbd in Frameworks */,
 				53BA811A27A5596A006145E3 /* DaumMap.framework in Frameworks */,
@@ -139,7 +143,6 @@
 				534D831827A406E2003F5080 /* CoreLocation.framework in Frameworks */,
 				534D831F27A40758003F5080 /* libxml2.tbd in Frameworks */,
 				534D831627A406C9003F5080 /* SystemConfiguration.framework in Frameworks */,
-				534D831427A4069A003F5080 /* OpenGLES.framework in Frameworks */,
 				363EAEAE69EE21B5FDD7251B /* Pods_Ranfoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +191,7 @@
 			children = (
 				53BA811B27A7F06B006145E3 /* ListManager.swift */,
 				53BA811D27A7F472006145E3 /* ListData.swift */,
+				534158AF27AE63EB00AF7024 /* ListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +219,7 @@
 		534D831227A4069A003F5080 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				534158AD27AE632A00AF7024 /* Metal.framework */,
 				534158A127AA777F00AF7024 /* Alamofire.framework */,
 				5341589D27AA773F00AF7024 /* Alamofire.framework */,
 				534D831D27A40725003F5080 /* libsqlite3.tbd */,
@@ -449,6 +454,7 @@
 				534D836B27A40A1A003F5080 /* MapViewController.swift in Sources */,
 				534D82F627A1ABEB003F5080 /* SceneDelegate.swift in Sources */,
 				534158AC27ABA8A600AF7024 /* Constants.swift in Sources */,
+				534158B027AE63EB00AF7024 /* ListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
