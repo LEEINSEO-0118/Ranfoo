@@ -10,4 +10,6 @@ import Foundation
 struct Constants {
     static let cellIdentifier = "listReusableCell"
     static let cellNibName = "ListCell"
+    
+    static let storeListSegueIdentifier = "goToStoreList"
 }

@@ -21,6 +21,7 @@ class ListManager {
     //MARK: - Singleton
     static let shared: ListManager = ListManager()
     public init() {}
+    
     //MARK: - Delegate
     var delegate: ListManagerDelegate?  // delagate에 ? 를 붙여주지 않았더니 init이 제대로 되지 않아다며 error 발생.
     
@@ -30,6 +31,7 @@ class ListManager {
     
     let keyword: String = "중식"
     var parameters: [String: String] = ["query": ""]
+    
     
     //MARK: - 장소 list request
     func fetchList(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
@@ -51,6 +53,8 @@ class ListManager {
                     do {
                         let decodedData = try JSONDecoder().decode(ListData.self, from: response.data!)
                         print(decodedData.documents[0].place_name)
+                        print(decodedData.documents[0].place_url)
+                        ListModel.storeListArray.updateValue(decodedData.documents[0].place_url, forKey: decodedData.documents[0].place_name)
                         
                     } catch { print("FILE MANAGER - searchFileFolder() Error decoding: \(error)") }
                     print("Validation Successful")

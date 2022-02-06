@@ -20,17 +20,18 @@ class ViewController: UIViewController {
     var listManager = ListManager()
     
     override func viewDidLoad() {
-        
-        kindTableView.dataSource = self
-        kindTableView.delegate = self
-        kindTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
         locationManager.requestWhenInUseAuthorization() // 위치 사용 허용 알림
         locationManager.requestLocation() // location을 요청하는 동시에 getList()까지 실행
         
+        kindTableView.dataSource = self
+        kindTableView.delegate = self
+        kindTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
+        
+        numberStepper.minimumValue = 1.0
         numberStepper.value = 5.0   // UIStepper 객체를 위에 생성해주어야 시작 값을 설정해줄 수 있다.
+        numberStepper.maximumValue = 10.0 // 최대 10개 가게를 표시가능
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -47,10 +48,7 @@ class ViewController: UIViewController {
     
     @IBAction func randomPressed(_ sender: UIButton) {
         
-//        sender.alpha = 0.5 // button이 누르고 때면 alpha값을 바꿔준다... 이게 아닌데
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-//            sender.alpha = 1.0
-//        } // 0.2초의 딜레이 이후에 alpha값이 1.0으로 돌아온다.
+        // location이 찾아지지 않았을 때 비활성화 되도록 설정하자.
         
     }
     
@@ -99,7 +97,7 @@ extension ViewController: UITableViewDelegate {
             cell.checkButton.isHidden = false
         }
         cell.selectionStyle = .none
-//        tableView.reloadData()
+
 //        tableView.deselectRow(at: indexPath, animated: true)
         
     }
@@ -129,7 +127,20 @@ extension ViewController: CLLocationManagerDelegate {
     
 }
 
-//MARK: - ListManagerDelagate
+
+//MARK: - StoreListView로 가기전 storeArray에 가게 목록을 추가
+
+extension ViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.storeListSegueIdentifier {
+            print("prepare함수 준비완료")
+            let storeListVC = segue.destination as! StoreListViewController
+            storeListVC.storeArray.append(contentsOf: ListModel.storeListArray.keys)
+        }
+    }
+    
+}
 
 
 

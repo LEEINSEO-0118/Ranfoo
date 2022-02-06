@@ -65,7 +65,7 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="randomPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lQg-gR-6pd"/>
-                                                    <segue destination="4Rp-bs-yxb" kind="show" id="eoy-Nx-yBv"/>
+                                                    <segue destination="4Rp-bs-yxb" kind="show" identifier="goToStoreList" id="eoy-Nx-yBv"/>
                                                 </connections>
                                             </button>
                                         </subviews>

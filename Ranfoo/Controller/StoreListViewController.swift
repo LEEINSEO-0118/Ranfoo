@@ -12,7 +12,7 @@ class StoreListViewController: UIViewController {
     
     
     
-    var storeArray = ["혜화문 식당", "BHC", "BBQ", "한반도", "샐러디"]
+    var storeArray = [String]()
     
     @IBOutlet weak var storeListTableView: UITableView!
     
@@ -27,10 +27,6 @@ class StoreListViewController: UIViewController {
     }
     
     @IBAction func reloadButtonPressed(_ sender: UIButton) {
-        
-        if let url = URL(string: "http://place.map.kakao.com/106874655") { // 카카오 맵으로 연결되는 url
-            UIApplication.shared.open(url, options: [:])
-        }
         
     }
 
@@ -70,11 +66,13 @@ extension StoreListViewController: UITableViewDelegate {
         cell.selectionStyle = .none
         
         // 만약 true면 parentVC의 view 위에 표시
-        self.definesPresentationContext = true
+//        self.definesPresentationContext = true
+//        let mapVC = MapViewController()
+//        present(mapVC, animated: true)
         
-        let mapVC = MapViewController()
-
-        present(mapVC, animated: true)
+        if let url = URL(string: ListModel.storeListArray[cell.label.text ?? "error"] ?? "http://place.map.kakao.com") { // 카카오 맵으로 연결되는 url
+            UIApplication.shared.open(url, options: [:])
+        }
 
         tableView.deselectRow(at: indexPath, animated: true)
                
