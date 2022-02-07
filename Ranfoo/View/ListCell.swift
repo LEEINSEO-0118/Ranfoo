@@ -25,8 +25,15 @@ class ListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func checkButtonPressed(_ sender: UIButton) {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        label.text = nil
+        checkButton.isHidden = true
         
+    }
+    
+    @IBAction func checkButtonPressed(_ sender: UIButton) {
+    
         if checkButton.isHidden == false {
             checkButton.isHidden = true
         } else {

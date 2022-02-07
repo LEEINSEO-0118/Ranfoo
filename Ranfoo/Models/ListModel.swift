@@ -7,10 +7,9 @@
 
 import Foundation
 
-struct ListModel {
+class ListModel {
     
-//    var storeName: String
+    static var storeListKeyArray = [String]()
     static var storeListArray = [String: String]()
-
     
 }

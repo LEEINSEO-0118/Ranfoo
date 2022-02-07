@@ -12,4 +12,6 @@ struct Constants {
     static let cellNibName = "ListCell"
     
     static let storeListSegueIdentifier = "goToStoreList"
+    
+    static let kakaoMapUrl = "http://place.map.kakao.com"
 }

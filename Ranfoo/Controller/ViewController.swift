@@ -14,9 +14,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var kindTableView: UITableView!
     @IBOutlet weak var numberStepper: UIStepper!
     
-    var kindArray = ["한식", "중식", "일식", "양식", "아시아음식", "치킨", "술집"]
+    let kindArray = ["한식", "중식", "일식", "양식", "아시아음식", "치킨", "술집"]
+    var storeArrayNumber = 1...5
     var locationManager = CLLocationManager()
-    
+    var lat: CLLocationDegrees = 128.612027
+    var lon: CLLocationDegrees = 35.890398
     var listManager = ListManager()
     
     override func viewDidLoad() {
@@ -48,12 +50,29 @@ class ViewController: UIViewController {
     
     @IBAction func randomPressed(_ sender: UIButton) {
         
+        storeArrayNumber = 1...Int(numberStepper.value)
+        ListModel.storeListKeyArray.removeAll()
+        ListModel.storeListArray.removeAll()
+        KindData.kindArray.removeAll()
+        
+        let cells = kindTableView.visibleCells as! [ListCell]
+        for cell in cells {
+            if cell.checkButton.isHidden == false {
+                KindData.kindArray.append(cell.label.text!)
+            }
+        }
+        print(KindData.kindArray)
+        
+        for keyword in KindData.kindArray {
+            listManager.fetchList(latitude: lat, longitude: lon, keyword: keyword)
+        }
+        print(ListModel.storeListArray)
+        print(ListModel.storeListKeyArray)
+        
         // location이 찾아지지 않았을 때 비활성화 되도록 설정하자.
         
     }
     
-    
-//    var cell = ListCell()
 }
 
 
@@ -96,9 +115,8 @@ extension ViewController: UITableViewDelegate {
         } else {
             cell.checkButton.isHidden = false
         }
+        
         cell.selectionStyle = .none
-
-//        tableView.deselectRow(at: indexPath, animated: true)
         
     }
 
@@ -112,12 +130,11 @@ extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             locationManager.stopUpdatingLocation()
-            let lat = location.coordinate.latitude
-            let lon = location.coordinate.longitude
+            lat = location.coordinate.latitude
+            lon = location.coordinate.longitude
             print("위치 업데이트!")
             print("위도 : \(lat)")
             print("경도 : \(lon)")
-            listManager.fetchList(latitude: lat, longitude: lon)
         }
     }
     
@@ -134,9 +151,16 @@ extension ViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.storeListSegueIdentifier {
-            print("prepare함수 준비완료")
             let storeListVC = segue.destination as! StoreListViewController
-            storeListVC.storeArray.append(contentsOf: ListModel.storeListArray.keys)
+            
+            print(storeArrayNumber)
+            storeListVC.storeArrayNumber = storeArrayNumber
+            
+            for _ in storeArrayNumber {
+                let item = ListModel.storeListKeyArray.randomElement()
+                storeListVC.storeArray.append(item ?? "KakaoMap")
+            }
+            
         }
     }
     

@@ -10,12 +10,10 @@ import UIKit
 
 class StoreListViewController: UIViewController {
     
-    
-    
-    var storeArray = [String]()
-    
     @IBOutlet weak var storeListTableView: UITableView!
     
+    var storeArray = [String]()
+    var storeArrayNumber = 1...5
 
     override func viewDidLoad() {
         
@@ -28,6 +26,13 @@ class StoreListViewController: UIViewController {
     
     @IBAction func reloadButtonPressed(_ sender: UIButton) {
         
+        print(storeArrayNumber)
+        storeArray.removeAll()
+        for _ in storeArrayNumber {
+            let item = ListModel.storeListKeyArray.randomElement()
+            storeArray.append(item ?? "")
+        }
+        storeListTableView.reloadData()
     }
 
 }
@@ -51,7 +56,7 @@ extension StoreListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(Int(tableView.bounds.size.height) / storeArray.count)
+        return CGFloat(Int(tableView.bounds.size.height) / 7)
     }
     
 }
@@ -65,12 +70,8 @@ extension StoreListViewController: UITableViewDelegate {
         let cell = tableView.cellForRow(at: indexPath) as! ListCell
         cell.selectionStyle = .none
         
-        // 만약 true면 parentVC의 view 위에 표시
-//        self.definesPresentationContext = true
-//        let mapVC = MapViewController()
-//        present(mapVC, animated: true)
         
-        if let url = URL(string: ListModel.storeListArray[cell.label.text ?? "error"] ?? "http://place.map.kakao.com") { // 카카오 맵으로 연결되는 url
+        if let url = URL(string: ListModel.storeListArray[cell.label.text ?? ""] ?? Constants.kakaoMapUrl) { // 카카오 맵으로 연결되는 url
             UIApplication.shared.open(url, options: [:])
         }
 
