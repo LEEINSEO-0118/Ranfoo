@@ -45,7 +45,7 @@ class ListManager {
     
     func getList(lat: CLLocationDegrees, lon: CLLocationDegrees) {
         
-        AF.request("\(url)y=\(lat)&x=\(lon)&sort=distance&radius=2000",
+        AF.request("\(url)y=\(lat)&x=\(lon)&sort=distance&radius=1000",
                    method: .get,
                    parameters: parameters,
                    headers: headers)
@@ -58,10 +58,10 @@ class ListManager {
                         let decodedData = try JSONDecoder().decode(ListData.self, from: response.data!)
                         
                         for document in decodedData.documents {
-//                            print("식당 이름: \(document.place_name)")
-//                            print("식당 링크: \(document.place_url)")
+                            print("식당 이름: \(document.place_name)")
+                            print("식당 링크: \(document.place_url)")
                             ListModel.storeListKeyArray.append(document.place_name)
-                            ListModel.storeListArray.updateValue(decodedData.documents[0].place_url, forKey: decodedData.documents[0].place_name)
+                            ListModel.storeListDictionary.updateValue(document.place_url, forKey: document.place_name)
                         }                        
                         
                     } catch { print("FILE MANAGER - searchFileFolder() Error decoding: \(error)") }

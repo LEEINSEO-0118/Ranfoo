@@ -13,7 +13,7 @@ class StoreListViewController: UIViewController {
     @IBOutlet weak var storeListTableView: UITableView!
     
     var storeArray = [String]()
-    var storeArrayNumber = 1...5
+    var storeArrayNumber = 1...5 // 기본값
 
     override func viewDidLoad() {
         
@@ -71,7 +71,7 @@ extension StoreListViewController: UITableViewDelegate {
         cell.selectionStyle = .none
         
         
-        if let url = URL(string: ListModel.storeListArray[cell.label.text ?? ""] ?? Constants.kakaoMapUrl) { // 카카오 맵으로 연결되는 url
+        if let url = URL(string: ListModel.storeListDictionary[cell.label.text ?? ""] ?? Constants.kakaoMapUrl) { // 카카오 맵으로 연결되는 url
             UIApplication.shared.open(url, options: [:])
         }
 

@@ -10,6 +10,6 @@ import Foundation
 class ListModel {
     
     static var storeListKeyArray = [String]()
-    static var storeListArray = [String: String]()
+    static var storeListDictionary = [String: String]()
     
 }

@@ -7,14 +7,22 @@
 
 import UIKit
 import CoreLocation
+import NVActivityIndicatorView
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var kindTableView: UITableView!
     @IBOutlet weak var numberStepper: UIStepper!
+    @IBOutlet var randomButton: UIButton!
+    @IBOutlet var locationLoadingMessage: UILabel!
+    let locationIndicator = NVActivityIndicatorView(frame: CGRect(x: 300, y: 685, width: 30, height: 30),
+                                                    type: .circleStrokeSpin,
+                                                    color: .black,
+                                                    padding: 0)
     
-    let kindArray = ["한식", "중식", "일식", "양식", "아시아음식", "치킨", "술집"]
+    
+    let kindArray = ["한식", "중식", "일식", "양식", "분식", "아시아음식", "치킨"]
     var storeArrayNumber = 1...5
     var locationManager = CLLocationManager()
     var lat: CLLocationDegrees = 128.612027
@@ -35,6 +43,11 @@ class ViewController: UIViewController {
         numberStepper.value = 5.0   // UIStepper 객체를 위에 생성해주어야 시작 값을 설정해줄 수 있다.
         numberStepper.maximumValue = 10.0 // 최대 10개 가게를 표시가능
         
+        self.view.addSubview(locationIndicator)
+        
+        randomButton.isEnabled = false
+        locationIndicator.startAnimating()
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -45,14 +58,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func locationPressed(_ sender: UIButton) {
+        randomButton.isEnabled = false
+        locationIndicator.startAnimating()
+        locationLoadingMessage.isHidden = false
+//        locationIndicator.isHidden = false
         locationManager.requestLocation()
     }
     
     @IBAction func randomPressed(_ sender: UIButton) {
         
+        self.randomButton.isEnabled = false
+        self.locationIndicator.startAnimating()
+    
         storeArrayNumber = 1...Int(numberStepper.value)
         ListModel.storeListKeyArray.removeAll()
-        ListModel.storeListArray.removeAll()
+        ListModel.storeListDictionary.removeAll()
         KindData.kindArray.removeAll()
         
         let cells = kindTableView.visibleCells as! [ListCell]
@@ -66,10 +86,10 @@ class ViewController: UIViewController {
         for keyword in KindData.kindArray {
             listManager.fetchList(latitude: lat, longitude: lon, keyword: keyword)
         }
-        print(ListModel.storeListArray)
-        print(ListModel.storeListKeyArray)
         
-        // location이 찾아지지 않았을 때 비활성화 되도록 설정하자.
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.7) {
+            self.performSegue(withIdentifier: Constants.storeListSegueIdentifier, sender: self)
+        }
         
     }
     
@@ -135,6 +155,9 @@ extension ViewController: CLLocationManagerDelegate {
             print("위치 업데이트!")
             print("위도 : \(lat)")
             print("경도 : \(lon)")
+            locationLoadingMessage.isHidden = true
+            locationIndicator.stopAnimating()
+            randomButton.isEnabled = true
         }
     }
     
@@ -150,6 +173,7 @@ extension ViewController: CLLocationManagerDelegate {
 extension ViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepare 진행중")
         if segue.identifier == Constants.storeListSegueIdentifier {
             let storeListVC = segue.destination as! StoreListViewController
             
@@ -158,10 +182,13 @@ extension ViewController {
             
             for _ in storeArrayNumber {
                 let item = ListModel.storeListKeyArray.randomElement()
-                storeListVC.storeArray.append(item ?? "KakaoMap")
+                storeListVC.storeArray.append(item ?? "수신된 가게가 없습니다.")
             }
             
+            locationIndicator.stopAnimating()
+            randomButton.isEnabled = true
         }
+        
     }
     
 }

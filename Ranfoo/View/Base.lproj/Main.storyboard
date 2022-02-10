@@ -65,7 +65,6 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="randomPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lQg-gR-6pd"/>
-                                                    <segue destination="4Rp-bs-yxb" kind="show" identifier="goToStoreList" id="eoy-Nx-yBv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -75,6 +74,12 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="0Uc-WN-NlZ"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치데이터를 가져오는 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uov-sk-kjC">
+                                <rect key="frame" x="259" y="776" width="130.5" height="16"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -82,16 +87,21 @@
                             <constraint firstItem="Ivf-YR-7bB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5cU-mC-x4B"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ivf-YR-7bB" secondAttribute="bottom" constant="70" id="Edm-1D-X5C"/>
                             <constraint firstItem="tlH-W2-Ebf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UOB-fI-mMM"/>
+                            <constraint firstItem="Uov-sk-kjC" firstAttribute="centerX" secondItem="VgJ-fH-w3i" secondAttribute="centerX" id="ct1-1U-VS8"/>
                             <constraint firstItem="tlH-W2-Ebf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="feo-0C-Vsw"/>
                             <constraint firstItem="Ivf-YR-7bB" firstAttribute="top" secondItem="tlH-W2-Ebf" secondAttribute="bottom" constant="30" id="h6E-BH-TaN"/>
                             <constraint firstItem="tlH-W2-Ebf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ie0-I5-Vp8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Uov-sk-kjC" secondAttribute="bottom" constant="70" id="wwL-BW-bEn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="🍜Ranfoo" id="7K7-Id-Tro"/>
                     <connections>
                         <outlet property="kindTableView" destination="tlH-W2-Ebf" id="aoQ-k7-rvU"/>
+                        <outlet property="locationLoadingMessage" destination="Uov-sk-kjC" id="225-rt-3kv"/>
                         <outlet property="numberLabel" destination="QPe-2L-6w2" id="C3P-73-Dnn"/>
                         <outlet property="numberStepper" destination="E0Z-vP-oDv" id="6OH-hU-edr"/>
+                        <outlet property="randomButton" destination="VgJ-fH-w3i" id="Wz3-0c-Md0"/>
+                        <segue destination="4Rp-bs-yxb" kind="show" identifier="goToStoreList" id="xZC-eU-7PR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
