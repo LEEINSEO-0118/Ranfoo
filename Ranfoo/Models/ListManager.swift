@@ -18,6 +18,15 @@ protocol ListManagerDelegate {
 
 //MARK: - Kakao Local api 를 통해 정보를 가게 정보를 가져온다.
 
+enum MyError: Error {
+    case decodingError
+    case networkError
+}
+
+enum YourError: Error {
+    
+}
+
 class ListManager {
     
     //MARK: - Singleton
@@ -38,14 +47,18 @@ class ListManager {
     
     //MARK: - 장소 list request
         
-    func fetchList(latitude: CLLocationDegrees, longitude: CLLocationDegrees, keyword: String) {
-        parameters["query"] = keyword
-        getList(lat: latitude, lon: longitude)
-    }
+//    func fetchList(latitude: CLLocationDegrees, longitude: CLLocationDegrees, keyword: String) {
+//        parameters["query"] = keyword
+//        getList(lat: latitude, lon: longitude)
+//    }
     
-    func getList(lat: CLLocationDegrees, lon: CLLocationDegrees) {
+    func getList(lat: CLLocationDegrees, lon: CLLocationDegrees, keyword: String,
+                 completion: @escaping ((Result<Bool, Error>) -> Void)) {
         
-        AF.request("\(url)y=\(lat)&x=\(lon)&sort=distance&radius=1000",
+        parameters["query"] = keyword
+        
+        
+        AF.request("\(url)y=\(lat)&x=\(lon)&sort=distance&radius=500",
                    method: .get,
                    parameters: parameters,
                    headers: headers)
@@ -62,11 +75,18 @@ class ListManager {
                             print("식당 링크: \(document.place_url)")
                             ListModel.storeListKeyArray.append(document.place_name)
                             ListModel.storeListDictionary.updateValue(document.place_url, forKey: document.place_name)
-                        }                        
+                        }
                         
-                    } catch { print("FILE MANAGER - searchFileFolder() Error decoding: \(error)") }
+                        completion(.success(true))
+                        
+                        
+                    } catch {
+                        print("FILE MANAGER - searchFileFolder() Error decoding: \(error)")
+                        completion(.failure(MyError.decodingError))
+                    }
                     print("Validation Successful")
                 case let .failure(error):
+                    completion(.failure(MyError.networkError))
                     print(error)
                 }
             }

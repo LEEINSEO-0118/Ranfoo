@@ -8,9 +8,7 @@
 import Foundation
 
 struct ListData: Codable {
-    
-    let documents: [Documents]
-    
+    let documents: [Documents]    
 }
 
 struct Documents: Codable {

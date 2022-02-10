@@ -7,11 +7,11 @@
 
 import UIKit
 
+//MARK: - StoreListViewController
 
 class StoreListViewController: UIViewController {
     
     @IBOutlet weak var storeListTableView: UITableView!
-    
     var storeArray = [String]()
     var storeArrayNumber = 1...5 // 기본값
 
@@ -23,6 +23,8 @@ class StoreListViewController: UIViewController {
         
         super.viewDidLoad()
     }
+
+    //MARK: - reloadButton
     
     @IBAction func reloadButtonPressed(_ sender: UIButton) {
         

@@ -9,26 +9,32 @@ import UIKit
 import CoreLocation
 import NVActivityIndicatorView
 
-class ViewController: UIViewController, UINavigationControllerDelegate {
+//MARK: - ViewController
+
+class ViewController: UIViewController {
     
+    //MARK: - Outlet
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var kindTableView: UITableView!
     @IBOutlet weak var numberStepper: UIStepper!
     @IBOutlet var randomButton: UIButton!
+    
     @IBOutlet var locationLoadingMessage: UILabel!
-    let locationIndicator = NVActivityIndicatorView(frame: CGRect(x: 300, y: 685, width: 30, height: 30),
+    let locationIndicator = NVActivityIndicatorView(frame: CGRect(x: 300, y: 700, width: 30, height: 30),
                                                     type: .circleStrokeSpin,
                                                     color: .black,
                                                     padding: 0)
     
+    //MARK: - 기본 상수, 변수
     
-    let kindArray = ["한식", "중식", "일식", "양식", "분식", "아시아음식", "치킨"]
+    let kindArray = ["한식", "중식", "일식", "양식", "분식", "치킨", "아시아음식"]
     var storeArrayNumber = 1...5
     var locationManager = CLLocationManager()
     var lat: CLLocationDegrees = 128.612027
     var lon: CLLocationDegrees = 35.890398
     var listManager = ListManager()
     
+    //MARK: - viewDidLoad 및 각종 함수
     override func viewDidLoad() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
@@ -49,7 +55,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         locationIndicator.startAnimating()
         
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additiingonal setup after loading the view.
+        
+        
+        let testString = "음식점고기"
+        
+        if testString.contains("고기") {
+            print("contains")
+        }
     }
 
     
@@ -61,7 +74,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         randomButton.isEnabled = false
         locationIndicator.startAnimating()
         locationLoadingMessage.isHidden = false
-//        locationIndicator.isHidden = false
         locationManager.requestLocation()
     }
     
@@ -83,24 +95,43 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         }
         print(KindData.kindArray)
         
+        let group = DispatchGroup()
+        
         for keyword in KindData.kindArray {
-            listManager.fetchList(latitude: lat, longitude: lon, keyword: keyword)
+            group.enter()
+            listManager.getList(lat: lat, lon: lon, keyword: keyword) { result in
+               
+                switch result {
+                case .success(let isTrue):
+                    print("\(isTrue)")
+                case .failure(let error):
+                    print(error)
+                }
+                
+                group.leave()
+            }
+            
         }
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.7) {
+        group.notify(queue: .main) {
+            print("network done!!")
+            
             self.performSegue(withIdentifier: Constants.storeListSegueIdentifier, sender: self)
         }
+        
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.7) {
+//            self.performSegue(withIdentifier: Constants.storeListSegueIdentifier, sender: self)
+//        }
         
     }
     
 }
 
 
+
 //MARK: - UITableViewDatatSource
 
 extension ViewController: UITableViewDataSource {
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return kindArray.count

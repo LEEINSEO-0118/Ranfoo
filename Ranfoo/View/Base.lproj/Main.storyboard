@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tlH-W2-Ebf">
-                                <rect key="frame" x="0.0" y="88" width="414" height="594"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="629"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ivf-YR-7bB">
-                                <rect key="frame" x="40.5" y="712" width="333" height="80"/>
+                                <rect key="frame" x="40.5" y="747" width="333" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="GEq-Ff-Hfo">
-                                        <rect key="frame" x="0.0" y="24" width="139" height="32"/>
+                                        <rect key="frame" x="0.0" y="4" width="139" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPe-2L-6w2">
                                                 <rect key="frame" x="0.0" y="1" width="15" height="30"/>
@@ -43,7 +43,7 @@
                                         <variation key="heightClass=regular-widthClass=regular" distribution="fill"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nxf-8L-hFc">
-                                        <rect key="frame" x="169" y="21" width="164" height="38"/>
+                                        <rect key="frame" x="169" y="1" width="164" height="38"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Njc-ok-pCt">
                                                 <rect key="frame" x="0.0" y="3.5" width="45" height="31"/>
@@ -71,11 +71,11 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="0Uc-WN-NlZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="NWc-XO-Rpu"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치데이터를 가져오는 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uov-sk-kjC">
-                                <rect key="frame" x="259" y="776" width="130.5" height="16"/>
+                                <rect key="frame" x="259" y="791" width="130.5" height="16"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -85,13 +85,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ivf-YR-7bB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5cU-mC-x4B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ivf-YR-7bB" secondAttribute="bottom" constant="70" id="Edm-1D-X5C"/>
                             <constraint firstItem="tlH-W2-Ebf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UOB-fI-mMM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ivf-YR-7bB" secondAttribute="bottom" constant="75" id="UYq-g7-Chl"/>
                             <constraint firstItem="Uov-sk-kjC" firstAttribute="centerX" secondItem="VgJ-fH-w3i" secondAttribute="centerX" id="ct1-1U-VS8"/>
                             <constraint firstItem="tlH-W2-Ebf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="feo-0C-Vsw"/>
                             <constraint firstItem="Ivf-YR-7bB" firstAttribute="top" secondItem="tlH-W2-Ebf" secondAttribute="bottom" constant="30" id="h6E-BH-TaN"/>
                             <constraint firstItem="tlH-W2-Ebf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ie0-I5-Vp8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Uov-sk-kjC" secondAttribute="bottom" constant="70" id="wwL-BW-bEn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Uov-sk-kjC" secondAttribute="bottom" constant="55" id="sPk-SA-bkH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="🍜Ranfoo" id="7K7-Id-Tro"/>

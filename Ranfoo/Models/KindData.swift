@@ -11,5 +11,4 @@ class KindData {
     
     static var kindArray = [String]()
     
-    
 }
