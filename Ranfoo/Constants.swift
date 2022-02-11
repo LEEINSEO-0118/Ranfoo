@@ -14,4 +14,6 @@ struct Constants {
     static let storeListSegueIdentifier = "goToStoreList"
     
     static let kakaoMapUrl = "http://place.map.kakao.com"
+    
+    static let secondColor = "second color"
 }

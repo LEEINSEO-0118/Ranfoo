@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     //MARK: - 기본 상수, 변수
     
-    let kindArray = ["한식", "중식", "일식", "양식", "분식", "치킨", "아시아음식"]
+    let kindArray = ["한식", "중식", "일식", "양식", "분식", "치킨", "아시아음식", "패스트푸드"]
     var storeArrayNumber = 1...5
     var locationManager = CLLocationManager()
     var lat: CLLocationDegrees = 128.612027
@@ -35,7 +35,9 @@ class ViewController: UIViewController {
     var listManager = ListManager()
     
     //MARK: - viewDidLoad 및 각종 함수
+    
     override func viewDidLoad() {
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
         locationManager.requestWhenInUseAuthorization() // 위치 사용 허용 알림

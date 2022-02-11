@@ -48,7 +48,6 @@ class ListManager {
         
         parameters["query"] = keyword
         
-        
         AF.request("\(url)y=\(lat)&x=\(lon)&sort=distance&radius=500",
                    method: .get,
                    parameters: parameters,
@@ -67,9 +66,7 @@ class ListManager {
                             ListModel.storeListKeyArray.append(document.place_name)
                             ListModel.storeListDictionary.updateValue(document.place_url, forKey: document.place_name)
                         }
-                        
                         completion(.success(true))
-                        
                         
                     } catch {
                         print("FILE MANAGER - searchFileFolder() Error decoding: \(error)")

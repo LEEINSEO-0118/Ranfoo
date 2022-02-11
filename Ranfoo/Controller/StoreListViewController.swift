@@ -17,6 +17,8 @@ class StoreListViewController: UIViewController {
 
     override func viewDidLoad() {
         
+        self.navigationController?.navigationBar.tintColor = .black
+        
         storeListTableView.dataSource = self
         storeListTableView.delegate = self
         storeListTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
