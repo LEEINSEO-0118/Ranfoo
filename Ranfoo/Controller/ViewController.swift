@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet var randomButton: UIButton!
     
     @IBOutlet var locationLoadingMessage: UILabel!
-    let locationIndicator = NVActivityIndicatorView(frame: CGRect(x: 300, y: 700, width: 30, height: 30),
+    let locationIndicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 0, height: 0),
                                                     type: .circleStrokeSpin,
                                                     color: .black,
                                                     padding: 0)
@@ -49,7 +49,13 @@ class ViewController: UIViewController {
         numberStepper.value = 5.0   // UIStepper 객체를 위에 생성해주어야 시작 값을 설정해줄 수 있다.
         numberStepper.maximumValue = 10.0 // 최대 10개 가게를 표시가능
         
+        locationIndicator.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(locationIndicator)
+        locationIndicator.centerXAnchor.constraint(equalTo: self.randomButton.centerXAnchor).isActive = true
+        locationIndicator.centerYAnchor.constraint(equalTo: self.randomButton.centerYAnchor).isActive = true
+        locationIndicator.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        locationIndicator.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        
         
         randomButton.isEnabled = false
         locationIndicator.startAnimating()
@@ -107,21 +113,13 @@ class ViewController: UIViewController {
                 case .failure(let error):
                     print(error)
                 }
-                
                 group.leave()
             }
-            
         }
-        
         group.notify(queue: .main) {
             print("network done!!")
-            
             self.performSegue(withIdentifier: Constants.storeListSegueIdentifier, sender: self)
         }
-        
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.7) {
-//            self.performSegue(withIdentifier: Constants.storeListSegueIdentifier, sender: self)
-//        }
         
     }
     

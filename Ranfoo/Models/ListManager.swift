@@ -23,10 +23,6 @@ enum MyError: Error {
     case networkError
 }
 
-enum YourError: Error {
-    
-}
-
 class ListManager {
     
     //MARK: - Singleton
@@ -46,11 +42,6 @@ class ListManager {
     var parameters: [String: String] = ["query": ""]
     
     //MARK: - 장소 list request
-        
-//    func fetchList(latitude: CLLocationDegrees, longitude: CLLocationDegrees, keyword: String) {
-//        parameters["query"] = keyword
-//        getList(lat: latitude, lon: longitude)
-//    }
     
     func getList(lat: CLLocationDegrees, lon: CLLocationDegrees, keyword: String,
                  completion: @escaping ((Result<Bool, Error>) -> Void)) {

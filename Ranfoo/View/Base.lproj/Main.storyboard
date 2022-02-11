@@ -75,7 +75,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치데이터를 가져오는 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uov-sk-kjC">
-                                <rect key="frame" x="259" y="791" width="130.5" height="16"/>
+                                <rect key="frame" x="259" y="792" width="130.5" height="16"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -85,13 +85,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ivf-YR-7bB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5cU-mC-x4B"/>
+                            <constraint firstItem="Uov-sk-kjC" firstAttribute="top" secondItem="Ivf-YR-7bB" secondAttribute="bottom" constant="5" id="Tki-4l-OCJ"/>
                             <constraint firstItem="tlH-W2-Ebf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UOB-fI-mMM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ivf-YR-7bB" secondAttribute="bottom" constant="75" id="UYq-g7-Chl"/>
                             <constraint firstItem="Uov-sk-kjC" firstAttribute="centerX" secondItem="VgJ-fH-w3i" secondAttribute="centerX" id="ct1-1U-VS8"/>
                             <constraint firstItem="tlH-W2-Ebf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="feo-0C-Vsw"/>
                             <constraint firstItem="Ivf-YR-7bB" firstAttribute="top" secondItem="tlH-W2-Ebf" secondAttribute="bottom" constant="30" id="h6E-BH-TaN"/>
                             <constraint firstItem="tlH-W2-Ebf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ie0-I5-Vp8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Uov-sk-kjC" secondAttribute="bottom" constant="55" id="sPk-SA-bkH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="🍜Ranfoo" id="7K7-Id-Tro"/>
