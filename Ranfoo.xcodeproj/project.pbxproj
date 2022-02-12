@@ -15,6 +15,12 @@
 		534158AE27AE632A00AF7024 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534158AD27AE632A00AF7024 /* Metal.framework */; };
 		534158B027AE63EB00AF7024 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534158AF27AE63EB00AF7024 /* ListModel.swift */; };
 		534158B227B0F6F900AF7024 /* KindData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534158B127B0F6F900AF7024 /* KindData.swift */; };
+		534158C427B7C69D00AF7024 /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 534158C027B7C69C00AF7024 /* NanumSquareRoundEB.ttf */; };
+		534158C527B7C69D00AF7024 /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 534158C127B7C69C00AF7024 /* NanumSquareRoundL.ttf */; };
+		534158C627B7C69D00AF7024 /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 534158C227B7C69C00AF7024 /* NanumSquareRoundR.ttf */; };
+		534158C727B7C69D00AF7024 /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 534158C327B7C69D00AF7024 /* NanumSquareRoundB.ttf */; };
+		534158CA27B7EFE500AF7024 /* KindCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534158C827B7EFE500AF7024 /* KindCollectionCell.swift */; };
+		534158CB27B7EFE500AF7024 /* KindCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534158C927B7EFE500AF7024 /* KindCollectionCell.xib */; };
 		534D82F427A1ABEB003F5080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F327A1ABEB003F5080 /* AppDelegate.swift */; };
 		534D82F627A1ABEB003F5080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F527A1ABEB003F5080 /* SceneDelegate.swift */; };
 		534D82F827A1ABEB003F5080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F727A1ABEB003F5080 /* ViewController.swift */; };
@@ -71,6 +77,12 @@
 		534158AD27AE632A00AF7024 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		534158AF27AE63EB00AF7024 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		534158B127B0F6F900AF7024 /* KindData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindData.swift; sourceTree = "<group>"; };
+		534158C027B7C69C00AF7024 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
+		534158C127B7C69C00AF7024 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundL.ttf; sourceTree = "<group>"; };
+		534158C227B7C69C00AF7024 /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundR.ttf; sourceTree = "<group>"; };
+		534158C327B7C69D00AF7024 /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundB.ttf; sourceTree = "<group>"; };
+		534158C827B7EFE500AF7024 /* KindCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindCollectionCell.swift; sourceTree = "<group>"; };
+		534158C927B7EFE500AF7024 /* KindCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KindCollectionCell.xib; sourceTree = "<group>"; };
 		534D82F027A1ABEB003F5080 /* Ranfoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ranfoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534D82F327A1ABEB003F5080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		534D82F527A1ABEB003F5080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +164,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		534158B327B7C5FA00AF7024 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				534158C327B7C69D00AF7024 /* NanumSquareRoundB.ttf */,
+				534158C027B7C69C00AF7024 /* NanumSquareRoundEB.ttf */,
+				534158C127B7C69C00AF7024 /* NanumSquareRoundL.ttf */,
+				534158C227B7C69C00AF7024 /* NanumSquareRoundR.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		534D82E727A1ABEB003F5080 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +197,7 @@
 		534D82F227A1ABEB003F5080 /* Ranfoo */ = {
 			isa = PBXGroup;
 			children = (
+				534158B327B7C5FA00AF7024 /* Font */,
 				53BA80D827A5596A006145E3 /* DaumMap.embeddedframework */,
 				534D82F327A1ABEB003F5080 /* AppDelegate.swift */,
 				534D82F527A1ABEB003F5080 /* SceneDelegate.swift */,
@@ -205,6 +229,8 @@
 				534D82F927A1ABEB003F5080 /* Main.storyboard */,
 				534158A727ABA34200AF7024 /* ListCell.swift */,
 				534158A827ABA34200AF7024 /* ListCell.xib */,
+				534158C827B7EFE500AF7024 /* KindCollectionCell.swift */,
+				534158C927B7EFE500AF7024 /* KindCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,9 +396,12 @@
 				53BA810B27A5596A006145E3 /* map_pin@3x.png in Resources */,
 				53BA810927A5596A006145E3 /* map_pin_red@3x.png in Resources */,
 				53BA811427A5596A006145E3 /* map_pin.png in Resources */,
+				534158C527B7C69D00AF7024 /* NanumSquareRoundL.ttf in Resources */,
 				53BA810D27A5596A006145E3 /* map_pin_red.png in Resources */,
 				53BA80FF27A5596A006145E3 /* map_pinup_custom@3x.png in Resources */,
 				53BA810727A5596A006145E3 /* copyright.png in Resources */,
+				534158C727B7C69D00AF7024 /* NanumSquareRoundB.ttf in Resources */,
+				534158CB27B7EFE500AF7024 /* KindCollectionCell.xib in Resources */,
 				53BA810627A5596A006145E3 /* map_pin_shadow@3x.png in Resources */,
 				534D830027A1ABED003F5080 /* LaunchScreen.storyboard in Resources */,
 				53BA810A27A5596A006145E3 /* daum_copyright.png in Resources */,
@@ -382,6 +411,7 @@
 				53BA810C27A5596A006145E3 /* map_present_tracking.png in Resources */,
 				53BA810327A5596A006145E3 /* detail_button.png in Resources */,
 				53BA811627A5596A006145E3 /* noimage.png in Resources */,
+				534158C427B7C69D00AF7024 /* NanumSquareRoundEB.ttf in Resources */,
 				53BA810827A5596A006145E3 /* th_line.png in Resources */,
 				53BA811127A5596A006145E3 /* info_box_tail.png in Resources */,
 				53BA810027A5596A006145E3 /* map_pin_custom.png in Resources */,
@@ -392,6 +422,7 @@
 				53BA811327A5596A006145E3 /* map_present_direction.png in Resources */,
 				53BA811227A5596A006145E3 /* noimage256.png in Resources */,
 				53BA810127A5596A006145E3 /* shadow_balloon.png in Resources */,
+				534158C627B7C69D00AF7024 /* NanumSquareRoundR.ttf in Resources */,
 				534D82FD27A1ABED003F5080 /* Assets.xcassets in Resources */,
 				534D82FB27A1ABEB003F5080 /* Main.storyboard in Resources */,
 				53BA811827A5596A006145E3 /* daum_th_line.png in Resources */,
@@ -458,6 +489,7 @@
 				534D82F627A1ABEB003F5080 /* SceneDelegate.swift in Sources */,
 				534158B227B0F6F900AF7024 /* KindData.swift in Sources */,
 				534158AC27ABA8A600AF7024 /* Constants.swift in Sources */,
+				534158CA27B7EFE500AF7024 /* KindCollectionCell.swift in Sources */,
 				534158B027AE63EB00AF7024 /* ListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

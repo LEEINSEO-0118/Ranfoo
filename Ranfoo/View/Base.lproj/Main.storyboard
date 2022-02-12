@@ -9,8 +9,13 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareRoundEB.ttf">
+            <string>NanumSquareRoundEB</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--🍜오늘 뭐 먹지?-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ranfoo" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,10 +23,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tlH-W2-Ebf">
-                                <rect key="frame" x="0.0" y="103" width="414" height="629"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ivf-YR-7bB">
                                 <rect key="frame" x="40.5" y="762" width="333" height="40"/>
                                 <subviews>
@@ -81,23 +82,56 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VR4-U4-RP0">
+                                <rect key="frame" x="0.0" y="88" width="414" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="밥묵자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7h-3F-kKH">
+                                        <rect key="frame" x="10" y="8.5" width="394" height="28"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundEB" family="NanumSquareRound" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="second color"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="F7h-3F-kKH" secondAttribute="trailing" constant="10" id="A5e-Bd-nM2"/>
+                                    <constraint firstAttribute="height" constant="45" id="adL-gu-qMJ"/>
+                                    <constraint firstItem="F7h-3F-kKH" firstAttribute="centerY" secondItem="VR4-U4-RP0" secondAttribute="centerY" id="pF3-ff-IPt"/>
+                                    <constraint firstItem="F7h-3F-kKH" firstAttribute="leading" secondItem="VR4-U4-RP0" secondAttribute="leading" constant="10" id="y7e-gJ-Pof"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iEx-x8-Mva">
+                                <rect key="frame" x="15" y="148" width="384" height="584"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Xg-Nq-z4b">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="iEx-x8-Mva" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="2oX-Qh-Hkq"/>
                             <constraint firstItem="Ivf-YR-7bB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5cU-mC-x4B"/>
+                            <constraint firstItem="Ivf-YR-7bB" firstAttribute="top" secondItem="iEx-x8-Mva" secondAttribute="bottom" constant="30" id="9I5-Iy-gfd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iEx-x8-Mva" secondAttribute="trailing" constant="15" id="Gda-yA-P4k"/>
+                            <constraint firstItem="VR4-U4-RP0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K46-Pl-8gl"/>
                             <constraint firstItem="Uov-sk-kjC" firstAttribute="top" secondItem="Ivf-YR-7bB" secondAttribute="bottom" constant="5" id="Tki-4l-OCJ"/>
-                            <constraint firstItem="tlH-W2-Ebf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UOB-fI-mMM"/>
                             <constraint firstItem="Uov-sk-kjC" firstAttribute="centerX" secondItem="VgJ-fH-w3i" secondAttribute="centerX" id="ct1-1U-VS8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ivf-YR-7bB" secondAttribute="bottom" constant="60" id="e0N-EM-IMy"/>
-                            <constraint firstItem="tlH-W2-Ebf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="fGQ-kM-Yt7"/>
-                            <constraint firstItem="tlH-W2-Ebf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="feo-0C-Vsw"/>
-                            <constraint firstItem="Ivf-YR-7bB" firstAttribute="top" secondItem="tlH-W2-Ebf" secondAttribute="bottom" constant="30" id="h6E-BH-TaN"/>
+                            <constraint firstItem="iEx-x8-Mva" firstAttribute="top" secondItem="VR4-U4-RP0" secondAttribute="bottom" constant="15" id="hGP-C2-SUm"/>
+                            <constraint firstItem="VR4-U4-RP0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mbP-wW-i8m"/>
+                            <constraint firstItem="VR4-U4-RP0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="raP-q9-MbL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="🍜오늘 뭐 먹지?" id="7K7-Id-Tro"/>
+                    <navigationItem key="navigationItem" id="7K7-Id-Tro"/>
                     <connections>
-                        <outlet property="kindTableView" destination="tlH-W2-Ebf" id="aoQ-k7-rvU"/>
+                        <outlet property="kindCollection" destination="iEx-x8-Mva" id="W6f-hY-5hz"/>
                         <outlet property="locationLoadingMessage" destination="Uov-sk-kjC" id="225-rt-3kv"/>
                         <outlet property="numberLabel" destination="QPe-2L-6w2" id="C3P-73-Dnn"/>
                         <outlet property="numberStepper" destination="E0Z-vP-oDv" id="6OH-hU-edr"/>
@@ -181,9 +215,11 @@
                         </textAttributes>
                         <navigationBarAppearance key="standardAppearance">
                             <color key="backgroundColor" name="second color"/>
+                            <color key="shadowColor" name="second color"/>
                         </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
                             <color key="backgroundColor" name="second color"/>
+                            <color key="shadowColor" name="second color"/>
                         </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>

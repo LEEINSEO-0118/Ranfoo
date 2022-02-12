@@ -15,10 +15,9 @@ class ViewController: UIViewController {
     
     //MARK: - Outlet
     @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var kindTableView: UITableView!
+    @IBOutlet var kindCollection: UICollectionView!
     @IBOutlet weak var numberStepper: UIStepper!
-    @IBOutlet var randomButton: UIButton!
-    
+    @IBOutlet var randomButton: UIButton!    
     @IBOutlet var locationLoadingMessage: UILabel!
     let locationIndicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 0, height: 0),
                                                     type: .circleStrokeSpin,
@@ -34,18 +33,24 @@ class ViewController: UIViewController {
     var lon: CLLocationDegrees = 35.890398
     var listManager = ListManager()
     
+    
     //MARK: - viewDidLoad 및 각종 함수
     
     override func viewDidLoad() {
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
         locationManager.requestWhenInUseAuthorization() // 위치 사용 허용 알림
         locationManager.requestLocation() // location을 요청하는 동시에 getList()까지 실행
         
-        kindTableView.dataSource = self
-        kindTableView.delegate = self
-        kindTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
+        let layout = UICollectionViewFlowLayout()
+        kindCollection.collectionViewLayout = layout
+        kindCollection.allowsMultipleSelection = true
+        kindCollection.dataSource = self
+        kindCollection.delegate = self
+        kindCollection.register(UINib(nibName: "KindCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.collectionCellIdentifier)
+        
         
         numberStepper.minimumValue = 1.0
         numberStepper.value = 5.0   // UIStepper 객체를 위에 생성해주어야 시작 값을 설정해줄 수 있다.
@@ -95,12 +100,13 @@ class ViewController: UIViewController {
         ListModel.storeListDictionary.removeAll()
         KindData.kindArray.removeAll()
         
-        let cells = kindTableView.visibleCells as! [ListCell]
+        let cells = kindCollection.visibleCells as! [KindCollectionCell]
         for cell in cells {
-            if cell.checkButton.isHidden == false {
+            if cell.isSelected == false {
                 KindData.kindArray.append(cell.label.text!)
             }
         }
+        
         print(KindData.kindArray)
         
         let group = DispatchGroup()
@@ -127,51 +133,77 @@ class ViewController: UIViewController {
     
 }
 
+//MARK: - UICollectionViewDataSource
 
-
-//MARK: - UITableViewDatatSource
-
-extension ViewController: UITableViewDataSource {
+extension ViewController: UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return kindArray.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.collectionCellIdentifier, for: indexPath) as! KindCollectionCell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! ListCell
         cell.label.text = kindArray[indexPath.row]
-        cell.label.font = UIFont.systemFont(ofSize: 18.0)
         return cell
-        
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(Int(tableView.bounds.size.height) / kindArray.count)
+}
+
+//MARK: - UICollectionViewDelegate
+
+extension ViewController: UICollectionViewDelegate {
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath) as! KindCollectionCell
+//    }
+    
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    
+    // 옆 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
+    
+    // 위 아래 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
+    
+    // cell 사이즈( 옆 라인을 고려하여 설정 )
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = collectionView.frame.width / 2 - 15 // 2등분하여 배치, 옆 간격 빼줌
+        let height = collectionView.frame.height / 4 - 15
+        return CGSize(width: width, height: height)
     }
     
 }
 
 
-//MARK: - UITableViewDelegate
-
-extension ViewController: UITableViewDelegate {
-    
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let cell = tableView.cellForRow(at: indexPath) as! ListCell
-        if cell.checkButton.isHidden == false {
-            cell.checkButton.isHidden = true
-        } else {
-            cell.checkButton.isHidden = false
-        }
-        
-        cell.selectionStyle = .none
-        
-    }
-
-}
+////MARK: - UITableViewDelegate
+//
+//extension ViewController: UITableViewDelegate {
+//
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        let cell = tableView.cellForRow(at: indexPath) as! ListCell
+//        if cell.checkButton.isHidden == false {
+//            cell.checkButton.isHidden = true
+//        } else {
+//            cell.checkButton.isHidden = false
+//        }
+//
+//        cell.selectionStyle = .none
+//
+//    }
+//
+//}
 
 
 //MARK: - CLLocationManagerDelegate
