@@ -22,6 +22,7 @@ class StoreListViewController: UIViewController {
         storeListTableView.dataSource = self
         storeListTableView.delegate = self
         storeListTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
+        storeListTableView.separatorStyle = .none
         
         super.viewDidLoad()
     }
@@ -53,14 +54,12 @@ extension StoreListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! ListCell
-        cell.checkButton.isHidden = true
-        cell.label.text = storeArray[indexPath.row]
-        cell.label.font = UIFont.systemFont(ofSize: 18.0)
+        cell.storeNameLabel.text = storeArray[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(Int(tableView.bounds.size.height) / 7)
+        return CGFloat(Int(tableView.bounds.size.height) / 4)
     }
     
 }
@@ -75,7 +74,7 @@ extension StoreListViewController: UITableViewDelegate {
         cell.selectionStyle = .none
         
         
-        if let url = URL(string: ListModel.storeListDictionary[cell.label.text ?? ""] ?? Constants.kakaoMapUrl) { // 카카오 맵으로 연결되는 url
+        if let url = URL(string: ListModel.storeListDictionary[cell.storeNameLabel.text ?? ""] ?? Constants.kakaoMapUrl) { // 카카오 맵으로 연결되는 url
             UIApplication.shared.open(url, options: [:])
         }
 

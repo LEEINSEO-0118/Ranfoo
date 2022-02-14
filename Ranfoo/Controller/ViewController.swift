@@ -166,19 +166,19 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     
     // 옆 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
+        return 10
     }
     
     // 위 아래 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
+        return 5
     }
     
     // cell 사이즈( 옆 라인을 고려하여 설정 )
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = collectionView.frame.width / 2 - 15 // 2등분하여 배치, 옆 간격 빼줌
-        let height = collectionView.frame.height / 4 - 15
+        let width = collectionView.frame.width / 2 - 10 // 2등분하여 배치, 옆 간격 빼줌
+        let height = collectionView.frame.height / 4 - 5
         return CGSize(width: width, height: height)
     }
     
