@@ -97,7 +97,7 @@ class ViewController: UIViewController {
     
         storeArrayNumber = 1...Int(numberStepper.value)
         ListModel.storeListKeyArray.removeAll()
-        ListModel.storeListDictionary.removeAll()
+        ListModel.storeUrlDict.removeAll()
         KindData.kindArray.removeAll()
         
         let cells = kindCollection.visibleCells as! [KindCollectionCell]

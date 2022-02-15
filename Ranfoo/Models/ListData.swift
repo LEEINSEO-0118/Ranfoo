@@ -12,7 +12,11 @@ struct ListData: Codable {
 }
 
 struct Documents: Codable {
-    let id: String
+    
     let place_name: String
     let place_url: String
+    let road_address_name: String
+    let phone: String
+    let distance: String
+    
 }

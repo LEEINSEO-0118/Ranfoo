@@ -64,7 +64,11 @@ class ListManager {
                             print("식당 이름: \(document.place_name)")
                             print("식당 링크: \(document.place_url)")
                             ListModel.storeListKeyArray.append(document.place_name)
-                            ListModel.storeListDictionary.updateValue(document.place_url, forKey: document.place_name)
+                            ListModel.storeUrlDict.updateValue(document.place_url, forKey: document.place_name)
+                            ListModel.storeKindDict.updateValue(keyword, forKey: document.place_name)
+                            ListModel.storeLocationDict.updateValue(document.road_address_name, forKey: document.place_name)
+                            ListModel.storePhoneDict.updateValue(document.phone, forKey: document.place_name)
+                            ListModel.storeDistanceDict.updateValue(document.distance, forKey: document.place_name)
                         }
                         completion(.success(true))
                         

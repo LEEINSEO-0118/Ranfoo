@@ -15,6 +15,7 @@ class StoreListViewController: UIViewController {
     var storeArray = [String]()
     var storeArrayNumber = 1...5 // 기본값
 
+
     override func viewDidLoad() {
         
         self.navigationController?.navigationBar.tintColor = .white
@@ -54,7 +55,32 @@ extension StoreListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! ListCell
-        cell.storeNameLabel.text = storeArray[indexPath.row]
+        
+        let storeName = storeArray[indexPath.row]
+        cell.storeNameLabel.text = storeName
+        cell.storeKindLabel.text = ListModel.storeKindDict[storeName]
+        cell.storeLocationLabel.text = ListModel.storeLocationDict[storeName] ?? "등록된 주소가 없습니다."
+        
+        if ListModel.storePhoneDict[storeName] == "" {
+            cell.storePhoneNumberLabel.text = "등록된 번호가 없습니다."
+        } else {
+            cell.storePhoneNumberLabel.text = ListModel.storePhoneDict[storeName]
+        }
+        
+        if let distance = ListModel.storeDistanceDict[storeName] {
+            cell.storeDistanceLabel.text = "\(distance)m"
+        }
+        
+        switch ListModel.storeKindDict[storeName] {
+        case "아시아음식" :
+            cell.storeKindBackground.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        case "패스트푸드" :
+            cell.storeKindBackground.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        default :
+            cell.storeKindBackground.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        }
+
+        
         return cell
     }
     
@@ -74,7 +100,7 @@ extension StoreListViewController: UITableViewDelegate {
         cell.selectionStyle = .none
         
         
-        if let url = URL(string: ListModel.storeListDictionary[cell.storeNameLabel.text ?? ""] ?? Constants.kakaoMapUrl) { // 카카오 맵으로 연결되는 url
+        if let url = URL(string: ListModel.storeUrlDict[cell.storeNameLabel.text ?? ""] ?? Constants.kakaoMapUrl) { // 카카오 맵으로 연결되는 url
             UIApplication.shared.open(url, options: [:])
         }
 

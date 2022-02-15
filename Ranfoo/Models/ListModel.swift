@@ -10,6 +10,10 @@ import Foundation
 class ListModel {
     
     static var storeListKeyArray = [String]()
-    static var storeListDictionary = [String: String]()
-    
+    static var storeUrlDict = [String: String]()
+    static var storeKindDict = [String: String]()
+    static var storeLocationDict = [String: String]()
+    static var storePhoneDict = [String: String]()
+    static var storeDistanceDict = [String: String]()
+
 }
