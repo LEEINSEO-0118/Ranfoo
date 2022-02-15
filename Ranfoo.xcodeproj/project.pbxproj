@@ -65,6 +65,7 @@
 		53BA811A27A5596A006145E3 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BA80FE27A5596A006145E3 /* DaumMap.framework */; };
 		53BA811C27A7F06B006145E3 /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA811B27A7F06B006145E3 /* ListManager.swift */; };
 		53BA811E27A7F472006145E3 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA811D27A7F472006145E3 /* ListData.swift */; };
+		53BBDB3027BBEDA600BE6834 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BBDB2F27BBEDA600BE6834 /* Private.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +140,7 @@
 		53BA80FE27A5596A006145E3 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		53BA811B27A7F06B006145E3 /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
 		53BA811D27A7F472006145E3 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
+		53BBDB2F27BBEDA600BE6834 /* Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 		89011FC3309D3833E710D055 /* Pods-Ranfoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranfoo.release.xcconfig"; path = "Target Support Files/Pods-Ranfoo/Pods-Ranfoo.release.xcconfig"; sourceTree = "<group>"; };
 		8AAF0A211C239B472C97B313 /* Pods-Ranfoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranfoo.debug.xcconfig"; path = "Target Support Files/Pods-Ranfoo/Pods-Ranfoo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 				534D830827A2A992003F5080 /* View */,
 				534D830927A2A99C003F5080 /* Controller */,
 				534158AB27ABA8A600AF7024 /* Constants.swift */,
+				53BBDB2F27BBEDA600BE6834 /* Private.swift */,
 			);
 			path = Ranfoo;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				534D830D27A2AD25003F5080 /* StoreListViewController.swift in Sources */,
+				53BBDB3027BBEDA600BE6834 /* Private.swift in Sources */,
 				53BA811E27A7F472006145E3 /* ListData.swift in Sources */,
 				53BA811C27A7F06B006145E3 /* ListManager.swift in Sources */,
 				534D82F827A1ABEB003F5080 /* ViewController.swift in Sources */,
