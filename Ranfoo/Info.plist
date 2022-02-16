@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>KAKAO_APP_KEY</key>
+	<string>232bc939c7e442f6356797610c76a5ba</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NanumSquareRoundB.ttf</string>
@@ -9,16 +11,6 @@
 		<string>NanumSquareRoundL.ttf</string>
 		<string>NanumSquareRoundR.ttf</string>
 	</array>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>&quot;현재 위치 사용을 허용하시겠습니까?&quot;</string>
-	<key>KAKAO_APP_KEY</key>
-	<string>232bc939c7e442f6356797610c76a5ba</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -38,5 +30,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

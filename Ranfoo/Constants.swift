@@ -18,4 +18,5 @@ struct Constants {
     static let kakaoMapUrl = "http://place.map.kakao.com"
     
     static let secondColor = "second color"
+    static let thirdColor = "third color"
 }

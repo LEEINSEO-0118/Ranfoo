@@ -32,24 +32,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JlS-wE-nZh">
-                                <rect key="frame" x="97" y="13" width="30" height="15"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOx-5l-PRt">
-                                        <rect key="frame" x="5.5" y="1.5" width="19" height="12"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="10"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="KwF-fy-a4p"/>
-                                    <constraint firstItem="hOx-5l-PRt" firstAttribute="centerY" secondItem="JlS-wE-nZh" secondAttribute="centerY" id="UIS-Cl-Ivk"/>
-                                    <constraint firstItem="hOx-5l-PRt" firstAttribute="centerX" secondItem="JlS-wE-nZh" secondAttribute="centerX" id="Yc0-c6-n7a"/>
-                                    <constraint firstAttribute="height" constant="15" id="d9m-yn-dPY"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대구 북구 산격동 1335-5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9c2-aS-ILe">
                                 <rect key="frame" x="10" y="45" width="128" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="12"/>
@@ -78,20 +60,26 @@
                                     <imageReference key="image" image="arrowshape.turn.up.right" catalog="system" symbolScale="small"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOx-5l-PRt">
+                                <rect key="frame" x="100" y="14" width="19" height="12"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.92549019607843142" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="pVb-pe-gD3" firstAttribute="top" secondItem="MwF-Yk-vFa" secondAttribute="bottom" constant="7" id="0ks-hj-VxE"/>
                             <constraint firstAttribute="trailing" secondItem="Ld6-M9-SWA" secondAttribute="trailing" constant="8" id="40R-ys-yja"/>
                             <constraint firstItem="pVb-pe-gD3" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="10" id="J80-lJ-gMx"/>
-                            <constraint firstItem="JlS-wE-nZh" firstAttribute="leading" secondItem="3xO-8S-gFn" secondAttribute="trailing" constant="5" id="LTv-A2-Jzy"/>
                             <constraint firstItem="9c2-aS-ILe" firstAttribute="top" secondItem="3xO-8S-gFn" secondAttribute="bottom" constant="15" id="Lzb-PA-pP5"/>
                             <constraint firstAttribute="bottom" secondItem="Ld6-M9-SWA" secondAttribute="bottom" constant="8" id="OHd-F8-tlA"/>
                             <constraint firstItem="3xO-8S-gFn" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="10" id="WFJ-6q-V9o"/>
+                            <constraint firstItem="hOx-5l-PRt" firstAttribute="centerY" secondItem="3xO-8S-gFn" secondAttribute="centerY" id="aMR-Dj-lVz"/>
+                            <constraint firstItem="hOx-5l-PRt" firstAttribute="leading" secondItem="3xO-8S-gFn" secondAttribute="trailing" constant="8" id="bZg-rx-mgc"/>
                             <constraint firstItem="MwF-Yk-vFa" firstAttribute="top" secondItem="9c2-aS-ILe" secondAttribute="bottom" constant="7" id="bmS-zK-6Ma"/>
                             <constraint firstItem="3xO-8S-gFn" firstAttribute="top" secondItem="Et4-Js-aNo" secondAttribute="top" constant="10" id="hxv-Mf-W83"/>
                             <constraint firstItem="MwF-Yk-vFa" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="10" id="il6-Nm-ymb"/>
-                            <constraint firstItem="JlS-wE-nZh" firstAttribute="top" secondItem="Et4-Js-aNo" secondAttribute="top" constant="13" id="jwb-Qt-id1"/>
                             <constraint firstItem="9c2-aS-ILe" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="10" id="o1r-uT-0LL"/>
                         </constraints>
                     </view>
@@ -107,7 +95,6 @@
             <connections>
                 <outlet property="listBubble" destination="Et4-Js-aNo" id="9Bb-Sa-95t"/>
                 <outlet property="storeDistanceLabel" destination="pVb-pe-gD3" id="7Cd-VJ-erA"/>
-                <outlet property="storeKindBackground" destination="JlS-wE-nZh" id="mc7-Rg-S0g"/>
                 <outlet property="storeKindLabel" destination="hOx-5l-PRt" id="dKO-cc-3dk"/>
                 <outlet property="storeLocationLabel" destination="9c2-aS-ILe" id="R1Y-Mc-niH"/>
                 <outlet property="storeNameLabel" destination="3xO-8S-gFn" id="IeV-G0-oG1"/>

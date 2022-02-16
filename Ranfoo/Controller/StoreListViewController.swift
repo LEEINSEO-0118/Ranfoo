@@ -55,7 +55,7 @@ extension StoreListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! ListCell
-        
+                
         let storeName = storeArray[indexPath.row]
         cell.storeNameLabel.text = storeName
         cell.storeKindLabel.text = ListModel.storeKindDict[storeName]
@@ -71,14 +71,14 @@ extension StoreListViewController: UITableViewDataSource {
             cell.storeDistanceLabel.text = "\(distance)m"
         }
         
-        switch ListModel.storeKindDict[storeName] {
-        case "아시아음식" :
-            cell.storeKindBackground.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        case "패스트푸드" :
-            cell.storeKindBackground.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        default :
-            cell.storeKindBackground.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        }
+//        switch ListModel.storeKindDict[storeName] {
+//        case "아시아음식" :
+//            cell.storeKindBackground.widthAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
+//        case "패스트푸드" :
+//            cell.storeKindBackground.widthAnchor.constraint(equalToConstant: 60).isActive = true
+//        default :
+//            cell.storeKindBackground.widthAnchor.constraint(equalToConstant: 30).isActive = true
+//        }
 
         
         return cell
