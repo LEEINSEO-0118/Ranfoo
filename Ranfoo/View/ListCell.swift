@@ -15,6 +15,7 @@ class ListCell: UITableViewCell {
     @IBOutlet var storeLocationLabel: UILabel!
     @IBOutlet var storePhoneNumberLabel: UILabel!
     @IBOutlet var storeDistanceLabel: UILabel!
+    @IBOutlet var storeUrlButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,34 +28,30 @@ class ListCell: UITableViewCell {
         listBubble.layer.shadowOffset = CGSize(width: 3, height: 4) //위치조정
         listBubble.layer.masksToBounds = false //내부에 속한 요소들이 UIView 밖을 벗어날 때, 잘라낼 것인지. 그림자는 밖에 그려지는 것이므로 false 로 설정
         
-//        //storeKindBackground
-//        storeKindBackground.layer.cornerRadius = 5
-//        //shadow
-//        storeKindBackground.layer.shadowColor = UIColor.black.cgColor
-//        storeKindBackground.layer.shadowOpacity = 0.3
-//        storeKindBackground.layer.shadowRadius = 1
-//        storeKindBackground.layer.shadowOffset = CGSize(width: 1, height: 1)
-//        storeKindBackground.layer.masksToBounds = false
+
+//        storeKindLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 100).isActive = true
         
+        storeKindLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        storeKindLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
+//        storeKindLabel.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         storeKindLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+//        storeKindLabel.widthAnchor.constraint(equalToConstant: storeKindLabel.frame.width + storeKindLabel.layoutMargins.left + storeKindLabel.layoutMargins.right).isActive = true
+        storeKindLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
         storeKindLabel.backgroundColor = UIColor(named: Constants.thirdColor)
         storeKindLabel.layer.masksToBounds = true
         storeKindLabel.layer.cornerRadius = 5
         storeKindLabel.textAlignment = .center
-        
-//        let shadow = storeKindLabel.layer
-//        shadow.masksToBounds = false
-//        shadow.shadowColor = UIColor.black.cgColor //색상
-//        shadow.shadowOpacity = 0.3 //alpha값
-//        shadow.shadowRadius = 1
-//        shadow.shadowOffset = CGSize(width: 1, height: 1) //위치조정
-        
 
+    }
+    
+    @IBAction func storeUrlButtonPressed(_ sender: UIButton) {
+        
+        if let url = URL(string: ListModel.storeUrlDict[storeNameLabel.text ?? ""] ?? Constants.kakaoMapUrl) { // 카카오 맵으로 연결되는 url
+            UIApplication.shared.open(url, options: [:])
+        }
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

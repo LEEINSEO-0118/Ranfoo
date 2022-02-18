@@ -24,19 +24,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ivf-YR-7bB">
-                                <rect key="frame" x="40.5" y="762" width="333" height="40"/>
+                                <rect key="frame" x="40.5" y="762" width="333.5" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="GEq-Ff-Hfo">
-                                        <rect key="frame" x="0.0" y="4" width="139" height="32"/>
+                                        <rect key="frame" x="0.0" y="4" width="139.5" height="32"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPe-2L-6w2">
-                                                <rect key="frame" x="0.0" y="1" width="15" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPe-2L-6w2">
+                                                <rect key="frame" x="0.0" y="1" width="15.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="E0Z-vP-oDv">
-                                                <rect key="frame" x="45" y="0.0" width="94" height="32"/>
+                                                <rect key="frame" x="45.5" y="0.0" width="94" height="32"/>
                                                 <connections>
                                                     <action selector="numberStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="02K-MR-NCc"/>
                                                 </connections>
@@ -45,7 +45,7 @@
                                         <variation key="heightClass=regular-widthClass=regular" distribution="fill"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nxf-8L-hFc">
-                                        <rect key="frame" x="169" y="1" width="164" height="38"/>
+                                        <rect key="frame" x="169.5" y="1" width="164" height="38"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Njc-ok-pCt">
                                                 <rect key="frame" x="0.0" y="3.5" width="45" height="31"/>
@@ -183,22 +183,43 @@
                     <navigationItem key="navigationItem" id="qUn-uK-UBc"/>
                     <connections>
                         <outlet property="storeListTableView" destination="hWv-sP-8VI" id="0z7-By-k02"/>
+                        <segue destination="lui-pK-2Ma" kind="show" id="zyF-D3-YaP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9y7-g9-OG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="900.00000000000011" y="-15.401785714285714"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="Bxk-QN-3To">
             <objects>
-                <viewController storyboardIdentifier="MapVC" id="lui-pK-2Ma" customClass="MapViewController" customModule="Ranfoo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapVC" id="lui-pK-2Ma" customClass="WebViewController" customModule="Ranfoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="geb-ll-Omf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcf-kC-Gov">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RER-UL-7Mq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zcf-kC-Gov" firstAttribute="top" secondItem="RER-UL-7Mq" secondAttribute="top" id="2I3-94-ByN"/>
+                            <constraint firstItem="RER-UL-7Mq" firstAttribute="trailing" secondItem="zcf-kC-Gov" secondAttribute="trailing" id="4tS-Yu-Ktk"/>
+                            <constraint firstItem="zcf-kC-Gov" firstAttribute="leading" secondItem="RER-UL-7Mq" secondAttribute="leading" id="ITl-Iq-fLp"/>
+                            <constraint firstItem="RER-UL-7Mq" firstAttribute="bottom" secondItem="zcf-kC-Gov" secondAttribute="bottom" id="jVn-ho-Iqv"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="c8a-qH-gOv"/>
+                    <connections>
+                        <outlet property="webView" destination="zcf-kC-Gov" id="aha-4w-6LD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCJ-0H-VnL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -237,7 +258,7 @@
     <resources>
         <image name="location" catalog="system" width="128" height="118"/>
         <namedColor name="second color">
-            <color red="1" green="0.8784313725490196" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.87800002098083496" blue="0.70599997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

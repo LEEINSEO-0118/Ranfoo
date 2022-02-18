@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         
         
         numberStepper.minimumValue = 1.0
-        numberStepper.value = 5.0   // UIStepper 객체를 위에 생성해주어야 시작 값을 설정해줄 수 있다.
+        numberStepper.value = 4.0   // UIStepper 객체를 위에 생성해주어야 시작 값을 설정해줄 수 있다.
         numberStepper.maximumValue = 10.0 // 최대 10개 가게를 표시가능
         
         locationIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -89,6 +89,8 @@ class ViewController: UIViewController {
         locationLoadingMessage.isHidden = false
         locationManager.requestLocation()
     }
+    
+    //MARK: - Random method
     
     @IBAction func randomPressed(_ sender: UIButton) {
         
@@ -154,10 +156,6 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath) as! KindCollectionCell
-//    }
-    
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout
@@ -183,27 +181,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
     
 }
-
-
-////MARK: - UITableViewDelegate
-//
-//extension ViewController: UITableViewDelegate {
-//
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        let cell = tableView.cellForRow(at: indexPath) as! ListCell
-//        if cell.checkButton.isHidden == false {
-//            cell.checkButton.isHidden = true
-//        } else {
-//            cell.checkButton.isHidden = false
-//        }
-//
-//        cell.selectionStyle = .none
-//
-//    }
-//
-//}
 
 
 //MARK: - CLLocationManagerDelegate

@@ -51,14 +51,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ld6-M9-SWA">
-                                <rect key="frame" x="212" y="110" width="80" height="18"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="13"/>
+                                <rect key="frame" x="203" y="110" width="89" height="18"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="15"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="자세히 보기">
                                     <color key="titleColor" systemColor="labelColor"/>
                                     <imageReference key="image" image="arrowshape.turn.up.right" catalog="system" symbolScale="small"/>
                                 </state>
+                                <connections>
+                                    <action selector="storeUrlButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="AX8-I9-zsl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOx-5l-PRt">
                                 <rect key="frame" x="100" y="14" width="19" height="12"/>
@@ -99,6 +102,7 @@
                 <outlet property="storeLocationLabel" destination="9c2-aS-ILe" id="R1Y-Mc-niH"/>
                 <outlet property="storeNameLabel" destination="3xO-8S-gFn" id="IeV-G0-oG1"/>
                 <outlet property="storePhoneNumberLabel" destination="MwF-Yk-vFa" id="GE4-dl-Nws"/>
+                <outlet property="storeUrlButton" destination="Ld6-M9-SWA" id="31Q-6d-Ugh"/>
             </connections>
             <point key="canvasLocation" x="-262" y="-62"/>
         </tableViewCell>

@@ -6,19 +6,15 @@
 //
 
 import UIKit
+import WebKit
 
-class MapViewController: UIViewController, MTMapViewDelegate {
+class WebViewController: UIViewController, MTMapViewDelegate {
     
-    var mapView: MTMapView!
-
+    @IBOutlet var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mapView = MTMapView(frame: self.view.frame)
-        mapView.delegate = self
-        mapView.baseMapType = .standard
-        self.view.addSubview(mapView)
-        
         
     }
     

@@ -59,7 +59,12 @@ extension StoreListViewController: UITableViewDataSource {
         let storeName = storeArray[indexPath.row]
         cell.storeNameLabel.text = storeName
         cell.storeKindLabel.text = ListModel.storeKindDict[storeName]
-        cell.storeLocationLabel.text = ListModel.storeLocationDict[storeName] ?? "등록된 주소가 없습니다."
+        
+        if ListModel.storeLocationDict[storeName] == "" {
+            cell.storeLocationLabel.text = "등록된 주소가 없습니다."
+        } else {
+            cell.storeLocationLabel.text = ListModel.storeLocationDict[storeName]
+        }
         
         if ListModel.storePhoneDict[storeName] == "" {
             cell.storePhoneNumberLabel.text = "등록된 번호가 없습니다."
@@ -70,17 +75,7 @@ extension StoreListViewController: UITableViewDataSource {
         if let distance = ListModel.storeDistanceDict[storeName] {
             cell.storeDistanceLabel.text = "\(distance)m"
         }
-        
-//        switch ListModel.storeKindDict[storeName] {
-//        case "아시아음식" :
-//            cell.storeKindBackground.widthAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
-//        case "패스트푸드" :
-//            cell.storeKindBackground.widthAnchor.constraint(equalToConstant: 60).isActive = true
-//        default :
-//            cell.storeKindBackground.widthAnchor.constraint(equalToConstant: 30).isActive = true
-//        }
-
-        
+                
         return cell
     }
     
@@ -99,10 +94,6 @@ extension StoreListViewController: UITableViewDelegate {
         let cell = tableView.cellForRow(at: indexPath) as! ListCell
         cell.selectionStyle = .none
         
-        
-        if let url = URL(string: ListModel.storeUrlDict[cell.storeNameLabel.text ?? ""] ?? Constants.kakaoMapUrl) { // 카카오 맵으로 연결되는 url
-            UIApplication.shared.open(url, options: [:])
-        }
 
         tableView.deselectRow(at: indexPath, animated: true)
                
