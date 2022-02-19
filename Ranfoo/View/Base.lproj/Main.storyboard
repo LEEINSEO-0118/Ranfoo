@@ -183,7 +183,7 @@
                     <navigationItem key="navigationItem" id="qUn-uK-UBc"/>
                     <connections>
                         <outlet property="storeListTableView" destination="hWv-sP-8VI" id="0z7-By-k02"/>
-                        <segue destination="lui-pK-2Ma" kind="show" id="zyF-D3-YaP"/>
+                        <segue destination="lui-pK-2Ma" kind="show" identifier="goToWebView" id="zyF-D3-YaP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9y7-g9-OG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

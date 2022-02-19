@@ -14,6 +14,7 @@ struct Constants {
     static let collectionCellNibName = "KindCollectionCell"
     
     static let storeListSegueIdentifier = "goToStoreList"
+    static let webViewSegueIdentifier = "goToWebView"
     
     static let kakaoMapUrl = "http://place.map.kakao.com"
     

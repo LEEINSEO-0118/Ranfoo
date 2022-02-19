@@ -11,11 +11,17 @@ import WebKit
 class WebViewController: UIViewController, MTMapViewDelegate {
     
     @IBOutlet var webView: WKWebView!
+    var webViewUrl = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        loadWeb(self.webViewUrl)
+    }
+    
+    func loadWeb(_ url: String) {
+        guard let myUrl = URL(string: url) else { return }
+        let request = URLRequest(url: myUrl)
+        webView.load(request)
     }
     
 

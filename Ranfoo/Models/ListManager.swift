@@ -61,8 +61,8 @@ class ListManager {
                         let decodedData = try JSONDecoder().decode(ListData.self, from: response.data!)
                         
                         for document in decodedData.documents {
-                            print("식당 이름: \(document.place_name)")
-                            print("식당 링크: \(document.place_url)")
+//                            print("식당 이름: \(document.place_name)")
+//                            print("식당 링크: \(document.place_url)")
                             ListModel.storeListKeyArray.append(document.place_name)
                             ListModel.storeUrlDict.updateValue(document.place_url, forKey: document.place_name)
                             ListModel.storeKindDict.updateValue(keyword, forKey: document.place_name)

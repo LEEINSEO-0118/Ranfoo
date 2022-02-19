@@ -46,9 +46,19 @@ class ListCell: UITableViewCell {
     
     @IBAction func storeUrlButtonPressed(_ sender: UIButton) {
         
-        if let url = URL(string: ListModel.storeUrlDict[storeNameLabel.text ?? ""] ?? Constants.kakaoMapUrl) { // 카카오 맵으로 연결되는 url
-            UIApplication.shared.open(url, options: [:])
-        }
+//        if let url = URL(string: ListModel.storeUrlDict[storeNameLabel.text ?? ""] ?? Constants.kakaoMapUrl) { // 카카오 맵으로 연결되는 url
+//            UIApplication.shared.open(url, options: [:])
+//        }
+        
+//        let StoreVC = StoreListViewController()
+//        
+//        if let storeName = storeNameLabel.text {
+//            StoreVC.webViewUrl = ListModel.storeUrlDict[storeName] ?? Constants.kakaoMapUrl
+//        } else {
+//            print("❗error. 가게 이름이 들어오지 않았음.")
+//        }                
+//        
+//        StoreVC.performSegue(withIdentifier: Constants.webViewSegueIdentifier, sender: self)
         
     }
     

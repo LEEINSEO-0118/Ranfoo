@@ -14,6 +14,7 @@ class StoreListViewController: UIViewController {
     @IBOutlet weak var storeListTableView: UITableView!
     var storeArray = [String]()
     var storeArrayNumber = 1...5 // 기본값
+    var webViewUrl = ""
 
 
     override func viewDidLoad() {
@@ -39,6 +40,7 @@ class StoreListViewController: UIViewController {
             storeArray.append(item ?? "")
         }
         storeListTableView.reloadData()
+    
     }
 
 }
@@ -93,11 +95,38 @@ extension StoreListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ListCell
         cell.selectionStyle = .none
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        // 옵셔널 에러가 발생했다. 흠 if let 발생전 performsegue가 발생해버린 것일까. 그게 아니였다.  url의 문제도 아니었다... 그렇다면.. 내가 perform method에서 loadWeb을 실행해서 그렇다면?
+       
+        if let storeName = cell.storeNameLabel.text {
+            self.webViewUrl = ListModel.storeUrlDict[storeName] ?? Constants.kakaoMapUrl
+        } else {
+            print("❗ error. 가게 이름이 들어오지 않았음.")
+        }
+        
+        self.performSegue(withIdentifier: Constants.webViewSegueIdentifier, sender: self)
         
 
-        tableView.deselectRow(at: indexPath, animated: true)
-               
     }
+    
 
+}
+
+//MARK: - Prepare method
+
+extension StoreListViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == Constants.webViewSegueIdentifier {
+            let webViewVC = segue.destination as! WebViewController
+            print("✅ \(self.webViewUrl)")
+            webViewVC.webViewUrl = self.webViewUrl
+           
+        }
+        
+    }
+    
 }
 
