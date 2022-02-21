@@ -34,7 +34,7 @@ class ListCell: UITableViewCell {
         storeKindLabel.translatesAutoresizingMaskIntoConstraints = false
         
 //        storeKindLabel.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        storeKindLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+//        storeKindLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
 //        storeKindLabel.widthAnchor.constraint(equalToConstant: storeKindLabel.frame.width + storeKindLabel.layoutMargins.left + storeKindLabel.layoutMargins.right).isActive = true
         storeKindLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
         storeKindLabel.backgroundColor = UIColor(named: Constants.thirdColor)

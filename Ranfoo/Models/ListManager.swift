@@ -10,11 +10,6 @@ import UIKit
 import Alamofire
 import CoreLocation
 
-//MARK: - api를 통해 가져온 가게 정보를 StoreListVC에 업데이트 해준다.
-
-protocol ListManagerDelegate {
-    func didUpdateStore(store: ListModel)
-}
 
 //MARK: - Kakao Local api 를 통해 정보를 가게 정보를 가져온다.
 
@@ -29,10 +24,6 @@ class ListManager {
     
     static let shared: ListManager = ListManager()
     public init() {}
-    
-    //MARK: - Delegate
-    
-    var delegate: ListManagerDelegate?  // delagate에 ? 를 붙여주지 않았더니 init이 제대로 되지 않아다며 error 발생.
     
     //MARK: - URL, Header 및 객체
     

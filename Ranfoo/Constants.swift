@@ -13,6 +13,7 @@ struct Constants {
     static let collectionCellIdentifier = "kindCollectionReusableCell"
     static let collectionCellNibName = "KindCollectionCell"
     
+    static let kindViewSegueIdentifier = "goToKindView"
     static let storeListSegueIdentifier = "goToStoreList"
     static let webViewSegueIdentifier = "goToWebView"
     

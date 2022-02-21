@@ -11,7 +11,7 @@ import NVActivityIndicatorView
 
 //MARK: - ViewController
 
-class ViewController: UIViewController {
+class KindViewController: UIViewController {
     
     //MARK: - Outlet
     @IBOutlet weak var numberLabel: UILabel!
@@ -37,8 +37,7 @@ class ViewController: UIViewController {
     //MARK: - viewDidLoad 및 각종 함수
     
     override func viewDidLoad() {
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-        
+            
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
         locationManager.requestWhenInUseAuthorization() // 위치 사용 허용 알림
@@ -137,7 +136,7 @@ class ViewController: UIViewController {
 
 //MARK: - UICollectionViewDataSource
 
-extension ViewController: UICollectionViewDataSource {
+extension KindViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return kindArray.count
@@ -154,13 +153,13 @@ extension ViewController: UICollectionViewDataSource {
 
 //MARK: - UICollectionViewDelegate
 
-extension ViewController: UICollectionViewDelegate {
+extension KindViewController: UICollectionViewDelegate {
     
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension KindViewController: UICollectionViewDelegateFlowLayout {
     
     // 옆 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -185,7 +184,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 //MARK: - CLLocationManagerDelegate
 
-extension ViewController: CLLocationManagerDelegate {
+extension KindViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
@@ -210,7 +209,7 @@ extension ViewController: CLLocationManagerDelegate {
 
 //MARK: - StoreListView로 가기전 storeArray에 가게 목록을 추가
 
-extension ViewController {
+extension KindViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("prepare 진행중")

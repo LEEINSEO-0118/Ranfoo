@@ -94,11 +94,11 @@ extension StoreListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ListCell
-        cell.selectionStyle = .none
-        tableView.deselectRow(at: indexPath, animated: true)
+        cell.selectionStyle = .none  // 선택하는 애니메이션이 없음
+        tableView.deselectRow(at: indexPath, animated: true)  // 선택 후 그림자 사라짐
         
         // 옵셔널 에러가 발생했다. 흠 if let 발생전 performsegue가 발생해버린 것일까. 그게 아니였다.  url의 문제도 아니었다... 그렇다면.. 내가 perform method에서 loadWeb을 실행해서 그렇다면?
-       
+
         if let storeName = cell.storeNameLabel.text {
             self.webViewUrl = ListModel.storeUrlDict[storeName] ?? Constants.kakaoMapUrl
         } else {

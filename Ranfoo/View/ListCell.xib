@@ -104,7 +104,7 @@
                 <outlet property="storePhoneNumberLabel" destination="MwF-Yk-vFa" id="GE4-dl-Nws"/>
                 <outlet property="storeUrlButton" destination="Ld6-M9-SWA" id="31Q-6d-Ugh"/>
             </connections>
-            <point key="canvasLocation" x="-262" y="-62"/>
+            <point key="canvasLocation" x="-262.31884057971018" y="-62.276785714285708"/>
         </tableViewCell>
     </objects>
     <resources>

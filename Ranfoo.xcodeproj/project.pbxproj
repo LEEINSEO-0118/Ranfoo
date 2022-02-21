@@ -23,7 +23,7 @@
 		534158D327BA502D00AF7024 /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 534158CF27BA502D00AF7024 /* NanumSquareRoundL.ttf */; };
 		534D82F427A1ABEB003F5080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F327A1ABEB003F5080 /* AppDelegate.swift */; };
 		534D82F627A1ABEB003F5080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F527A1ABEB003F5080 /* SceneDelegate.swift */; };
-		534D82F827A1ABEB003F5080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F727A1ABEB003F5080 /* ViewController.swift */; };
+		534D82F827A1ABEB003F5080 /* KindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D82F727A1ABEB003F5080 /* KindViewController.swift */; };
 		534D82FB27A1ABEB003F5080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534D82F927A1ABEB003F5080 /* Main.storyboard */; };
 		534D82FD27A1ABED003F5080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 534D82FC27A1ABED003F5080 /* Assets.xcassets */; };
 		534D830027A1ABED003F5080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534D82FE27A1ABED003F5080 /* LaunchScreen.storyboard */; };
@@ -66,6 +66,7 @@
 		53BA811C27A7F06B006145E3 /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA811B27A7F06B006145E3 /* ListManager.swift */; };
 		53BA811E27A7F472006145E3 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA811D27A7F472006145E3 /* ListData.swift */; };
 		53BBDB3027BBEDA600BE6834 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BBDB2F27BBEDA600BE6834 /* Private.swift */; };
+		53CF0BBF27C36FEA00E3469F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CF0BBE27C36FEA00E3469F /* MainViewController.swift */; };
 		53FCD99927BFE93A00C94783 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FCD99827BFE93A00C94783 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +89,7 @@
 		534D82F027A1ABEB003F5080 /* Ranfoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ranfoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534D82F327A1ABEB003F5080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		534D82F527A1ABEB003F5080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		534D82F727A1ABEB003F5080 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		534D82F727A1ABEB003F5080 /* KindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindViewController.swift; sourceTree = "<group>"; };
 		534D82FA27A1ABEB003F5080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		534D82FC27A1ABED003F5080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		534D82FF27A1ABED003F5080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -143,6 +144,7 @@
 		53BA811D27A7F472006145E3 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
 		53BBDB2F27BBEDA600BE6834 /* Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 		53BBDB3127BBF07F00BE6834 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		53CF0BBE27C36FEA00E3469F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		53FCD99827BFE93A00C94783 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		89011FC3309D3833E710D055 /* Pods-Ranfoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranfoo.release.xcconfig"; path = "Target Support Files/Pods-Ranfoo/Pods-Ranfoo.release.xcconfig"; sourceTree = "<group>"; };
 		8AAF0A211C239B472C97B313 /* Pods-Ranfoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranfoo.debug.xcconfig"; path = "Target Support Files/Pods-Ranfoo/Pods-Ranfoo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -246,9 +248,10 @@
 		534D830927A2A99C003F5080 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				534D82F727A1ABEB003F5080 /* ViewController.swift */,
+				534D82F727A1ABEB003F5080 /* KindViewController.swift */,
 				534D830C27A2AD25003F5080 /* StoreListViewController.swift */,
 				534D836A27A40A1A003F5080 /* WebViewController.swift */,
+				53CF0BBE27C36FEA00E3469F /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -492,9 +495,10 @@
 				53BBDB3027BBEDA600BE6834 /* Private.swift in Sources */,
 				53BA811E27A7F472006145E3 /* ListData.swift in Sources */,
 				53BA811C27A7F06B006145E3 /* ListManager.swift in Sources */,
-				534D82F827A1ABEB003F5080 /* ViewController.swift in Sources */,
+				534D82F827A1ABEB003F5080 /* KindViewController.swift in Sources */,
 				534D82F427A1ABEB003F5080 /* AppDelegate.swift in Sources */,
 				534158A927ABA34200AF7024 /* ListCell.swift in Sources */,
+				53CF0BBF27C36FEA00E3469F /* MainViewController.swift in Sources */,
 				534D836B27A40A1A003F5080 /* WebViewController.swift in Sources */,
 				534D82F627A1ABEB003F5080 /* SceneDelegate.swift in Sources */,
 				534158B227B0F6F900AF7024 /* KindData.swift in Sources */,

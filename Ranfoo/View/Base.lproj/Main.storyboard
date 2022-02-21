@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Kind View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ranfoo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="KindViewController" customModule="Ranfoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,9 +141,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-123.18840579710145" y="-15.401785714285714"/>
+            <point key="canvasLocation" x="187" y="-15"/>
         </scene>
-        <!--Store List View Controller-->
+        <!--식당정보-->
         <scene sceneID="xSc-5F-Med">
             <objects>
                 <viewController id="4Rp-bs-yxb" customClass="StoreListViewController" customModule="Ranfoo" customModuleProvider="target" sceneMemberID="viewController">
@@ -180,7 +180,7 @@
                             <constraint firstItem="vJr-oi-eqm" firstAttribute="trailing" secondItem="hWv-sP-8VI" secondAttribute="trailing" constant="35" id="oQi-fG-AW2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qUn-uK-UBc"/>
+                    <navigationItem key="navigationItem" title="식당정보" largeTitleDisplayMode="never" id="qUn-uK-UBc"/>
                     <connections>
                         <outlet property="storeListTableView" destination="hWv-sP-8VI" id="0z7-By-k02"/>
                         <segue destination="lui-pK-2Ma" kind="show" identifier="goToWebView" id="zyF-D3-YaP"/>
@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9y7-g9-OG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900.00000000000011" y="-15.401785714285714"/>
+            <point key="canvasLocation" x="1059" y="-15"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="Bxk-QN-3To">
@@ -223,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCJ-0H-VnL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="-15"/>
+            <point key="canvasLocation" x="1946" y="-15"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="055-3f-tYi">
@@ -233,8 +233,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5ek-nH-IxI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="labelColor"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="15"/>
                         </textAttributes>
                         <navigationBarAppearance key="standardAppearance">
                             <color key="backgroundColor" name="second color"/>
@@ -247,14 +248,82 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LDy-1V-XGc"/>
+                        <segue destination="Gtv-ak-o8X" kind="relationship" relationship="rootViewController" id="TDL-d7-xaQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVS-Fr-nCS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1033.3333333333335" y="-15.401785714285714"/>
+            <point key="canvasLocation" x="-1539" y="-15"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="pAP-1P-aap">
+            <objects>
+                <viewController id="Gtv-ak-o8X" customClass="MainViewController" customModule="Ranfoo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vuk-IL-cPd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTv-us-OMd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="밥묵자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jq-l7-F4D">
+                                        <rect key="frame" x="10" y="8.5" width="394" height="28"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundEB" family="NanumSquareRound" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="second color"/>
+                                <constraints>
+                                    <constraint firstItem="5jq-l7-F4D" firstAttribute="centerY" secondItem="KTv-us-OMd" secondAttribute="centerY" id="1p9-4j-kGi"/>
+                                    <constraint firstAttribute="height" constant="45" id="3ux-Az-lWe"/>
+                                    <constraint firstAttribute="trailing" secondItem="5jq-l7-F4D" secondAttribute="trailing" constant="10" id="AuG-Qo-ERO"/>
+                                    <constraint firstItem="5jq-l7-F4D" firstAttribute="leading" secondItem="KTv-us-OMd" secondAttribute="leading" constant="10" id="FlP-mL-4YU"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="qLk-r6-zYB"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXJ-Nm-077">
+                                <rect key="frame" x="162" y="458" width="90" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="식당찾기">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="NanumSquareRoundB"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="kindViewButtonPressed:" destination="Gtv-ak-o8X" eventType="touchUpInside" id="gbE-Je-Ax9"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="phT-G6-1Pf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R4z-cA-CRY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KTv-us-OMd" firstAttribute="trailing" secondItem="R4z-cA-CRY" secondAttribute="trailing" id="0cI-U9-Qof"/>
+                            <constraint firstItem="ZXJ-Nm-077" firstAttribute="centerX" secondItem="R4z-cA-CRY" secondAttribute="centerX" id="22X-bj-hxR"/>
+                            <constraint firstItem="KTv-us-OMd" firstAttribute="leading" secondItem="R4z-cA-CRY" secondAttribute="leading" id="BgG-Cv-3nM"/>
+                            <constraint firstItem="KTv-us-OMd" firstAttribute="top" secondItem="R4z-cA-CRY" secondAttribute="top" id="KOD-ho-Klf"/>
+                            <constraint firstItem="ZXJ-Nm-077" firstAttribute="centerY" secondItem="R4z-cA-CRY" secondAttribute="centerY" id="V0d-A1-pFt"/>
+                            <constraint firstItem="ZXJ-Nm-077" firstAttribute="centerX" secondItem="R4z-cA-CRY" secondAttribute="centerX" id="ds3-ex-Wmg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RWd-8A-vYH"/>
+                    <connections>
+                        <outlet property="kindViewButton" destination="ZXJ-Nm-077" id="qHW-7H-MWB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rg6-WB-8Sv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-700" y="-15.401785714285714"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="tintColor"/>
     <resources>
         <image name="location" catalog="system" width="128" height="118"/>
         <namedColor name="second color">
@@ -265,6 +334,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
