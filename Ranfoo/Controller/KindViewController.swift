@@ -146,6 +146,9 @@ extension KindViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.collectionCellIdentifier, for: indexPath) as! KindCollectionCell
         
         cell.label.text = kindArray[indexPath.row]
+        guard let kind = cell.label.text else {fatalError()}
+        cell.kindImage.image = UIImage(named: Constants.kindIcon[kind] ?? Constants.kindIconDefault)
+        
         return cell
     }
     

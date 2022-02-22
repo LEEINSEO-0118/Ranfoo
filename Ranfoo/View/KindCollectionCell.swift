@@ -12,6 +12,7 @@ class KindCollectionCell: UICollectionViewCell {
     @IBOutlet var cellBubble: UIView!
     @IBOutlet var label: UILabel!
     @IBOutlet var checkButton: UIButton!
+    @IBOutlet var kindImage: UIImageView!
     
 
     override func awakeFromNib() {

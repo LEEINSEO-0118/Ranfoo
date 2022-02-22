@@ -22,6 +22,9 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func kindViewButtonPressed(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: Constants.kindViewSegueIdentifier, sender: self)
+        
     }
     
     

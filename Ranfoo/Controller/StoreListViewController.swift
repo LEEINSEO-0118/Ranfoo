@@ -18,9 +18,7 @@ class StoreListViewController: UIViewController {
 
 
     override func viewDidLoad() {
-        
-        self.navigationController?.navigationBar.tintColor = .white
-        
+                
         storeListTableView.dataSource = self
         storeListTableView.delegate = self
         storeListTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
@@ -57,6 +55,9 @@ extension StoreListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! ListCell
+        
+        cell.listBubble.layer.borderWidth = 1
+        cell.listBubble.layer.borderColor = UIColor.gray.cgColor
                 
         let storeName = storeArray[indexPath.row]
         cell.storeNameLabel.text = storeName

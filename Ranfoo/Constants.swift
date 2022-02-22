@@ -21,4 +21,16 @@ struct Constants {
     
     static let secondColor = "second color"
     static let thirdColor = "third color"
+    
+    static let kindIconDefault = "kindIconDefault"
+    static let kindIcon = [
+        "한식": "koreanFood",
+        "중식": "chineseFood",
+        "일식": "japaneseFood",
+        "양식": "westernFood",
+        "분식": "boonsic",
+        "치킨": "chicken",
+        "아시아음식": "asianFood",
+        "패스트푸드": "fastFood"
+    ]
 }

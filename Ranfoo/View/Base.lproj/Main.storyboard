@@ -143,7 +143,7 @@
             </objects>
             <point key="canvasLocation" x="187" y="-15"/>
         </scene>
-        <!--식당정보-->
+        <!--Store List View Controller-->
         <scene sceneID="xSc-5F-Med">
             <objects>
                 <viewController id="4Rp-bs-yxb" customClass="StoreListViewController" customModule="Ranfoo" customModuleProvider="target" sceneMemberID="viewController">
@@ -180,7 +180,7 @@
                             <constraint firstItem="vJr-oi-eqm" firstAttribute="trailing" secondItem="hWv-sP-8VI" secondAttribute="trailing" constant="35" id="oQi-fG-AW2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="식당정보" largeTitleDisplayMode="never" id="qUn-uK-UBc"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="qUn-uK-UBc"/>
                     <connections>
                         <outlet property="storeListTableView" destination="hWv-sP-8VI" id="0z7-By-k02"/>
                         <segue destination="lui-pK-2Ma" kind="show" identifier="goToWebView" id="zyF-D3-YaP"/>
@@ -298,7 +298,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="kindViewButtonPressed:" destination="Gtv-ak-o8X" eventType="touchUpInside" id="gbE-Je-Ax9"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="phT-G6-1Pf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -316,6 +315,7 @@
                     <navigationItem key="navigationItem" id="RWd-8A-vYH"/>
                     <connections>
                         <outlet property="kindViewButton" destination="ZXJ-Nm-077" id="qHW-7H-MWB"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToKindView" id="0NW-tV-eYm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rg6-WB-8Sv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

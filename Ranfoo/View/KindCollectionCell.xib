@@ -44,10 +44,19 @@
                                     <action selector="checkButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="FJP-jS-MTU"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="koreanFood" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QPh-C3-Pea">
+                                <rect key="frame" x="45.5" y="11.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="8PM-IG-8GI"/>
+                                    <constraint firstAttribute="height" constant="20" id="Q2N-Pp-mI1"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="cell color"/>
                         <constraints>
+                            <constraint firstItem="QPh-C3-Pea" firstAttribute="leading" secondItem="fGb-dT-lQE" secondAttribute="trailing" constant="5" id="DX3-Ps-1XJ"/>
                             <constraint firstAttribute="bottom" secondItem="U3B-lU-5Fc" secondAttribute="bottom" constant="5" id="Ez6-XC-p6b"/>
+                            <constraint firstItem="QPh-C3-Pea" firstAttribute="centerY" secondItem="fGb-dT-lQE" secondAttribute="centerY" id="FJX-lM-Iyz"/>
                             <constraint firstItem="fGb-dT-lQE" firstAttribute="leading" secondItem="1Lz-yi-2T3" secondAttribute="leading" constant="13" id="McT-fS-czg"/>
                             <constraint firstItem="fGb-dT-lQE" firstAttribute="top" secondItem="1Lz-yi-2T3" secondAttribute="top" constant="13" id="Oq2-HC-MQm"/>
                             <constraint firstItem="U3B-lU-5Fc" firstAttribute="leading" secondItem="1Lz-yi-2T3" secondAttribute="leading" constant="2" id="kjh-5Q-lgM"/>
@@ -66,6 +75,7 @@
             <connections>
                 <outlet property="cellBubble" destination="1Lz-yi-2T3" id="H7y-Ty-7ap"/>
                 <outlet property="checkButton" destination="U3B-lU-5Fc" id="PGZ-kO-C4Y"/>
+                <outlet property="kindImage" destination="QPh-C3-Pea" id="TIy-EE-Aj6"/>
                 <outlet property="label" destination="fGb-dT-lQE" id="7ci-L7-Xzn"/>
             </connections>
             <point key="canvasLocation" x="144.92753623188406" y="49.21875"/>
@@ -73,6 +83,7 @@
     </objects>
     <resources>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="koreanFood" width="512" height="512"/>
         <namedColor name="cell color">
             <color red="1" green="0.92500001192092896" blue="0.69800001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

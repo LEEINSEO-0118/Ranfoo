@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "_i_icon_15583_icon_155831_512.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}
