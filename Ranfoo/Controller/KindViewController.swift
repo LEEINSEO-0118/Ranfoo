@@ -51,6 +51,7 @@ class KindViewController: UIViewController {
         kindCollection.register(UINib(nibName: "KindCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.collectionCellIdentifier)
         
         
+        
         numberStepper.minimumValue = 1.0
         numberStepper.value = 4.0   // UIStepper 객체를 위에 생성해주어야 시작 값을 설정해줄 수 있다.
         numberStepper.maximumValue = 10.0 // 최대 10개 가게를 표시가능
@@ -103,7 +104,7 @@ class KindViewController: UIViewController {
         
         let cells = kindCollection.visibleCells as! [KindCollectionCell]
         for cell in cells {
-            if cell.isSelected == false {
+            if cell.isSelected == true {
                 KindData.kindArray.append(cell.label.text!)
             }
         }
@@ -148,6 +149,7 @@ extension KindViewController: UICollectionViewDataSource {
         cell.label.text = kindArray[indexPath.row]
         guard let kind = cell.label.text else {fatalError()}
         cell.kindImage.image = UIImage(named: Constants.kindIcon[kind] ?? Constants.kindIconDefault)
+        cell.checkButton.isHidden = true
         
         return cell
     }
@@ -224,7 +226,7 @@ extension KindViewController {
             
             for _ in storeArrayNumber {
                 let item = ListModel.storeListKeyArray.randomElement()
-                storeListVC.storeArray.append(item ?? "수신된 가게가 없습니다.")
+                storeListVC.storeArray.append(item ?? "음식종류를 다시 선택해주세요!")
             }
             
             locationIndicator.stopAnimating()

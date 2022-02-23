@@ -58,6 +58,9 @@ extension StoreListViewController: UITableViewDataSource {
         
         cell.listBubble.layer.borderWidth = 1
         cell.listBubble.layer.borderColor = UIColor.gray.cgColor
+        
+        cell.storeDistanceLabel.text = "음식종류를 다시 선택해주세요!"
+        cell.storePhoneNumberLabel.text = "음식종류를 다시 선택해주세요!"
                 
         let storeName = storeArray[indexPath.row]
         cell.storeNameLabel.text = storeName

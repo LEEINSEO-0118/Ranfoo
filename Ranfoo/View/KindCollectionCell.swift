@@ -29,15 +29,19 @@ class KindCollectionCell: UICollectionViewCell {
     }
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
-        
+        if checkButton.isHidden == true {
+            checkButton.isHidden = false
+        } else {
+            checkButton.isHidden = true
+        }
     }
     
     override var isSelected: Bool {
       didSet {
         if isSelected {
-            checkButton.isHidden = true
-        } else {
             checkButton.isHidden = false
+        } else {
+            checkButton.isHidden = true
         }
       }
     }
