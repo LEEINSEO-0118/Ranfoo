@@ -67,7 +67,7 @@ class ListManager {
                         print("FILE MANAGER - searchFileFolder() Error decoding: \(error)")
                         completion(.failure(MyError.decodingError))
                     }
-                    print("Validation Successful")
+                    print("✅ Validation Successful")
                 case let .failure(error):
                     completion(.failure(MyError.networkError))
                     print(error)

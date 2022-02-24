@@ -14,11 +14,17 @@ import NVActivityIndicatorView
 class KindViewController: UIViewController {
     
     //MARK: - Outlet
+    
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet var kindCollection: UICollectionView!
     @IBOutlet weak var numberStepper: UIStepper!
-    @IBOutlet var randomButton: UIButton!    
+    @IBOutlet var locationButton: UIButton!
+    @IBOutlet var randomButton: UIButton!
     @IBOutlet var locationLoadingMessage: UILabel!
+    @IBOutlet var leftButtonBubble: UIView!
+    @IBOutlet var randomButtonBubble: UIView!
+    @IBOutlet var rightButtonBubble: UIView!
+    
     let locationIndicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 0, height: 0),
                                                     type: .circleStrokeSpin,
                                                     color: .black,
@@ -37,6 +43,7 @@ class KindViewController: UIViewController {
     //MARK: - viewDidLoad 및 각종 함수
     
     override func viewDidLoad() {
+        super.viewDidLoad()
             
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
@@ -49,35 +56,25 @@ class KindViewController: UIViewController {
         kindCollection.dataSource = self
         kindCollection.delegate = self
         kindCollection.register(UINib(nibName: "KindCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.collectionCellIdentifier)
-        
-        
-        
+                        
         numberStepper.minimumValue = 1.0
         numberStepper.value = 4.0   // UIStepper 객체를 위에 생성해주어야 시작 값을 설정해줄 수 있다.
         numberStepper.maximumValue = 10.0 // 최대 10개 가게를 표시가능
         
-        locationIndicator.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(locationIndicator)
-        locationIndicator.centerXAnchor.constraint(equalTo: self.randomButton.centerXAnchor).isActive = true
-        locationIndicator.centerYAnchor.constraint(equalTo: self.randomButton.centerYAnchor).isActive = true
-        locationIndicator.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        locationIndicator.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        
         randomButton.isEnabled = false
         locationIndicator.startAnimating()
         
-        super.viewDidLoad()
-        // Do any additiingonal setup after loading the view.
+        setObject()
         
+//        let testString = "음식점고기"
+//
+//        if testString.contains("고기") {
+//            print("contains")
+//        }
         
-        let testString = "음식점고기"
-        
-        if testString.contains("고기") {
-            print("contains")
-        }
     }
 
+//MARK: - stepper and locationPressed method
     
     @IBAction func numberStepper(_ sender: UIStepper) {
         numberLabel.text = String(format: "%.0f", sender.value)
@@ -88,11 +85,25 @@ class KindViewController: UIViewController {
         locationIndicator.startAnimating()
         locationLoadingMessage.isHidden = false
         locationManager.requestLocation()
+        
+        self.locationButton.layer.opacity = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.locationButton.layer.opacity = 1.0
+          }
+        
     }
     
     //MARK: - Random method
     
     @IBAction func randomPressed(_ sender: UIButton) {
+        
+        self.randomButtonBubble.layer.opacity = 0.5
+        self.randomButton.layer.opacity = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.randomButtonBubble.layer.opacity = 1.0
+            self.randomButton.layer.opacity = 1.0
+          }
+        
         
         self.randomButton.isEnabled = false
         self.locationIndicator.startAnimating()
@@ -212,7 +223,7 @@ extension KindViewController: CLLocationManagerDelegate {
 }
 
 
-//MARK: - StoreListView로 가기전 storeArray에 가게 목록을 추가
+//MARK: - Prepare를 통해 StoreListView로 가기전 storeArray에 가게 목록을 추가
 
 extension KindViewController {
     
@@ -237,5 +248,42 @@ extension KindViewController {
     
 }
 
+//MARK: - setObject method
+
+extension KindViewController {
+    
+    func setObject() {
+        
+        leftButtonBubble.layer.cornerRadius = 12
+        leftButtonBubble.layer.masksToBounds = false
+        leftButtonBubble.layer.shadowColor = UIColor.black.cgColor
+        leftButtonBubble.layer.shadowOpacity = 0.3
+        leftButtonBubble.layer.shadowRadius = 1
+        leftButtonBubble.layer.shadowOffset = CGSize(width: 0, height: 3)
+        
+        randomButtonBubble.layer.cornerRadius = 10
+        randomButtonBubble.layer.masksToBounds = false
+        randomButtonBubble.layer.shadowColor = UIColor.black.cgColor
+        randomButtonBubble.layer.shadowOpacity = 0.3
+        randomButtonBubble.layer.shadowRadius = 2
+        randomButtonBubble.layer.shadowOffset = CGSize(width: 0, height: 3)
+        
+        rightButtonBubble.layer.cornerRadius = 12
+        rightButtonBubble.layer.masksToBounds = false
+        rightButtonBubble.layer.shadowColor = UIColor.black.cgColor
+        rightButtonBubble.layer.shadowOpacity = 0.3
+        rightButtonBubble.layer.shadowRadius = 1
+        rightButtonBubble.layer.shadowOffset = CGSize(width: 0, height: 3)
+        
+        locationIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(locationIndicator)
+        locationIndicator.centerXAnchor.constraint(equalTo: self.randomButton.centerXAnchor).isActive = true
+        locationIndicator.centerYAnchor.constraint(equalTo: self.randomButton.centerYAnchor).isActive = true
+        locationIndicator.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        locationIndicator.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        
+    }
+    
+}
 
 
