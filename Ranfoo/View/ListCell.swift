@@ -25,7 +25,7 @@ class ListCell: UITableViewCell {
         listBubble.layer.shadowColor = UIColor.black.cgColor //색상
         listBubble.layer.shadowOpacity = 0.2 //alpha값
         listBubble.layer.shadowRadius = 1 //반경
-        listBubble.layer.shadowOffset = CGSize(width: 3, height: 4) //위치조정
+        listBubble.layer.shadowOffset = CGSize(width: 3, height: 3) //위치조정
         listBubble.layer.masksToBounds = false //내부에 속한 요소들이 UIView 밖을 벗어날 때, 잘라낼 것인지. 그림자는 밖에 그려지는 것이므로 false 로 설정
         
 
@@ -34,7 +34,7 @@ class ListCell: UITableViewCell {
         storeKindLabel.translatesAutoresizingMaskIntoConstraints = false
         
 //        storeKindLabel.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-//        storeKindLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        storeKindLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
 //        storeKindLabel.widthAnchor.constraint(equalToConstant: storeKindLabel.frame.width + storeKindLabel.layoutMargins.left + storeKindLabel.layoutMargins.right).isActive = true
         storeKindLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
         storeKindLabel.backgroundColor = UIColor(named: Constants.thirdColor)

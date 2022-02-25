@@ -11,25 +11,41 @@ import UIKit
 
 class StoreListViewController: UIViewController {
     
+    @IBOutlet var reRandomButtonBubble: UIView!
+    @IBOutlet var reRandomButton: UIButton!
+    @IBOutlet var storeNumber: UILabel!
     @IBOutlet weak var storeListTableView: UITableView!
+    
+    var storeNumberInt = Int()
     var storeArray = [String]()
     var storeArrayNumber = 1...5 // 기본값
     var webViewUrl = ""
 
 
     override func viewDidLoad() {
-                
+        super.viewDidLoad()
+
         storeListTableView.dataSource = self
         storeListTableView.delegate = self
         storeListTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
         storeListTableView.separatorStyle = .none
         
-        super.viewDidLoad()
+        storeNumber.text = String(storeNumberInt)
+        
+        setObject()
+        
     }
 
     //MARK: - reloadButton
     
     @IBAction func reloadButtonPressed(_ sender: UIButton) {
+        
+        self.reRandomButton.layer.opacity = 0.5
+        self.reRandomButtonBubble.layer.opacity = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.reRandomButton.layer.opacity = 1.0
+            self.reRandomButtonBubble.layer.opacity = 1.0
+        }
         
         print(storeArrayNumber)
         storeArray.removeAll()
@@ -134,3 +150,25 @@ extension StoreListViewController {
     
 }
 
+//MARK: - setObject
+
+extension StoreListViewController {
+    
+    func setObject() {
+        
+        reRandomButtonBubble.backgroundColor = UIColor(named: Constants.secondColor)
+        reRandomButtonBubble.layer.masksToBounds = false
+        reRandomButtonBubble.layer.cornerRadius = 10
+        
+        reRandomButtonBubble.layer.shadowRadius = 2
+        reRandomButtonBubble.layer.shadowColor = UIColor.black.cgColor
+        reRandomButtonBubble.layer.shadowOpacity = 0.3
+        reRandomButtonBubble.layer.shadowOffset = CGSize(width: 0, height: 3)
+        
+        reRandomButtonBubble.layer.borderColor = UIColor.gray.cgColor
+        reRandomButtonBubble.layer.borderWidth = 1
+        
+        
+    }
+    
+}

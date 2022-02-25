@@ -21,9 +21,7 @@ class KindViewController: UIViewController {
     @IBOutlet var locationButton: UIButton!
     @IBOutlet var randomButton: UIButton!
     @IBOutlet var locationLoadingMessage: UILabel!
-    @IBOutlet var leftButtonBubble: UIView!
     @IBOutlet var randomButtonBubble: UIView!
-    @IBOutlet var rightButtonBubble: UIView!
     
     let locationIndicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 0, height: 0),
                                                     type: .circleStrokeSpin,
@@ -44,7 +42,7 @@ class KindViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
         locationManager.requestWhenInUseAuthorization() // 위치 사용 허용 알림
@@ -89,7 +87,7 @@ class KindViewController: UIViewController {
         self.locationButton.layer.opacity = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.locationButton.layer.opacity = 1.0
-          }
+        }
         
     }
     
@@ -240,6 +238,8 @@ extension KindViewController {
                 storeListVC.storeArray.append(item ?? "음식종류를 다시 선택해주세요!")
             }
             
+            storeListVC.storeNumberInt = Int(numberStepper.value)
+            
             locationIndicator.stopAnimating()
             randomButton.isEnabled = true
         }
@@ -254,26 +254,14 @@ extension KindViewController {
     
     func setObject() {
         
-        leftButtonBubble.layer.cornerRadius = 12
-        leftButtonBubble.layer.masksToBounds = false
-        leftButtonBubble.layer.shadowColor = UIColor.black.cgColor
-        leftButtonBubble.layer.shadowOpacity = 0.3
-        leftButtonBubble.layer.shadowRadius = 1
-        leftButtonBubble.layer.shadowOffset = CGSize(width: 0, height: 3)
-        
         randomButtonBubble.layer.cornerRadius = 10
         randomButtonBubble.layer.masksToBounds = false
         randomButtonBubble.layer.shadowColor = UIColor.black.cgColor
         randomButtonBubble.layer.shadowOpacity = 0.3
         randomButtonBubble.layer.shadowRadius = 2
         randomButtonBubble.layer.shadowOffset = CGSize(width: 0, height: 3)
-        
-        rightButtonBubble.layer.cornerRadius = 12
-        rightButtonBubble.layer.masksToBounds = false
-        rightButtonBubble.layer.shadowColor = UIColor.black.cgColor
-        rightButtonBubble.layer.shadowOpacity = 0.3
-        rightButtonBubble.layer.shadowRadius = 1
-        rightButtonBubble.layer.shadowOffset = CGSize(width: 0, height: 3)
+//        randomButtonBubble.layer.borderWidth = 1
+//        randomButtonBubble.layer.borderColor = UIColor.black.cgColor
         
         locationIndicator.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(locationIndicator)
