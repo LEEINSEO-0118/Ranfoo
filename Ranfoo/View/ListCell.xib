@@ -32,24 +32,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대구 북구 산격동 1335-5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9c2-aS-ILe">
-                                <rect key="frame" x="10" y="45" width="128" height="14"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="053-939-1908" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwF-Yk-vFa">
-                                <rect key="frame" x="10" y="66" width="84" height="14"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVb-pe-gD3">
-                                <rect key="frame" x="10" y="87" width="26" height="14"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ld6-M9-SWA">
                                 <rect key="frame" x="203" y="110" width="89" height="18"/>
                                 <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="15"/>
@@ -64,26 +46,83 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOx-5l-PRt">
-                                <rect key="frame" x="100" y="14" width="19" height="12"/>
+                                <rect key="frame" x="100" y="14.5" width="18.5" height="11.5"/>
                                 <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KT9-nH-KVp">
+                                <rect key="frame" x="10" y="45" width="147.5" height="15"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Cp0-CZ-9o4">
+                                        <rect key="frame" x="0.0" y="1" width="15" height="13.5"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="186-PA-GD2"/>
+                                            <constraint firstAttribute="height" constant="15" id="gxF-I6-rkM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대구 북구 산격동 1335-5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9c2-aS-ILe">
+                                        <rect key="frame" x="20" y="0.0" width="127.5" height="15"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="esP-QN-rN8">
+                                <rect key="frame" x="10" y="67" width="103.5" height="15"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WWk-8d-EqB">
+                                        <rect key="frame" x="0.0" y="0.5" width="15" height="13.5"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="Nbl-pM-Ryo"/>
+                                            <constraint firstAttribute="width" constant="15" id="abZ-G3-b5b"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="053-939-1908" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwF-Yk-vFa">
+                                        <rect key="frame" x="20" y="0.0" width="83.5" height="15"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pdA-Ek-9AR">
+                                <rect key="frame" x="10" y="89" width="46" height="15"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="figure.walk.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vv0-i9-cAc">
+                                        <rect key="frame" x="0.0" y="0.5" width="15" height="14"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="9cX-qS-kPR"/>
+                                            <constraint firstAttribute="height" constant="15" id="vMD-pz-coP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVb-pe-gD3">
+                                        <rect key="frame" x="20" y="0.0" width="26" height="15"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.92549019607843142" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="pVb-pe-gD3" firstAttribute="top" secondItem="MwF-Yk-vFa" secondAttribute="bottom" constant="7" id="0ks-hj-VxE"/>
                             <constraint firstAttribute="trailing" secondItem="Ld6-M9-SWA" secondAttribute="trailing" constant="8" id="40R-ys-yja"/>
-                            <constraint firstItem="pVb-pe-gD3" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="10" id="J80-lJ-gMx"/>
-                            <constraint firstItem="9c2-aS-ILe" firstAttribute="top" secondItem="3xO-8S-gFn" secondAttribute="bottom" constant="15" id="Lzb-PA-pP5"/>
+                            <constraint firstItem="pdA-Ek-9AR" firstAttribute="top" secondItem="esP-QN-rN8" secondAttribute="bottom" constant="7" id="6hz-LU-BkA"/>
+                            <constraint firstItem="esP-QN-rN8" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="10" id="EnC-5y-Z2B"/>
+                            <constraint firstItem="KT9-nH-KVp" firstAttribute="top" secondItem="3xO-8S-gFn" secondAttribute="bottom" constant="15" id="IoM-C9-4qk"/>
                             <constraint firstAttribute="bottom" secondItem="Ld6-M9-SWA" secondAttribute="bottom" constant="8" id="OHd-F8-tlA"/>
+                            <constraint firstItem="esP-QN-rN8" firstAttribute="top" secondItem="KT9-nH-KVp" secondAttribute="bottom" constant="7" id="WC8-Pd-aom"/>
                             <constraint firstItem="3xO-8S-gFn" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="10" id="WFJ-6q-V9o"/>
+                            <constraint firstItem="pdA-Ek-9AR" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="10" id="ZRN-Bj-B1T"/>
                             <constraint firstItem="hOx-5l-PRt" firstAttribute="centerY" secondItem="3xO-8S-gFn" secondAttribute="centerY" id="aMR-Dj-lVz"/>
+                            <constraint firstItem="KT9-nH-KVp" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="10" id="aug-gJ-7wd"/>
                             <constraint firstItem="hOx-5l-PRt" firstAttribute="leading" secondItem="3xO-8S-gFn" secondAttribute="trailing" constant="8" id="bZg-rx-mgc"/>
-                            <constraint firstItem="MwF-Yk-vFa" firstAttribute="top" secondItem="9c2-aS-ILe" secondAttribute="bottom" constant="7" id="bmS-zK-6Ma"/>
                             <constraint firstItem="3xO-8S-gFn" firstAttribute="top" secondItem="Et4-Js-aNo" secondAttribute="top" constant="10" id="hxv-Mf-W83"/>
-                            <constraint firstItem="MwF-Yk-vFa" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="10" id="il6-Nm-ymb"/>
-                            <constraint firstItem="9c2-aS-ILe" firstAttribute="leading" secondItem="Et4-Js-aNo" secondAttribute="leading" constant="10" id="o1r-uT-0LL"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -109,6 +148,9 @@
     </objects>
     <resources>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
+        <image name="figure.walk.circle" catalog="system" width="128" height="121"/>
+        <image name="location" catalog="system" width="128" height="118"/>
+        <image name="phone" catalog="system" width="128" height="115"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

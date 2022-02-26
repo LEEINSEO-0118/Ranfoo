@@ -103,6 +103,7 @@ extension StoreListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(Int(tableView.bounds.size.height) / 4)
+//        return CGFloat(150)
     }
     
 }

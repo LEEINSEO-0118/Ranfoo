@@ -190,6 +190,7 @@ extension KindViewController: UICollectionViewDelegateFlowLayout {
         
         let width = collectionView.frame.width / 2 - 10 // 2등분하여 배치, 옆 간격 빼줌
         let height = collectionView.frame.height / 4 - 5
+//        let height = 527 / 4 - 5
         return CGSize(width: width, height: height)
     }
     
