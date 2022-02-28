@@ -1,0 +1,6 @@
+framework module Pods_Ranfoo {
+  umbrella header "Pods-Ranfoo-umbrella.h"
+
+  export *
+  module * { export * }
+}

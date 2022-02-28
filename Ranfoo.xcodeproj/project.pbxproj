@@ -65,7 +65,6 @@
 		53BA811A27A5596A006145E3 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BA80FE27A5596A006145E3 /* DaumMap.framework */; };
 		53BA811C27A7F06B006145E3 /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA811B27A7F06B006145E3 /* ListManager.swift */; };
 		53BA811E27A7F472006145E3 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA811D27A7F472006145E3 /* ListData.swift */; };
-		53BBDB3027BBEDA600BE6834 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BBDB2F27BBEDA600BE6834 /* Private.swift */; };
 		53CF0BBF27C36FEA00E3469F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CF0BBE27C36FEA00E3469F /* MainViewController.swift */; };
 		53FCD99927BFE93A00C94783 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FCD99827BFE93A00C94783 /* WebKit.framework */; };
 /* End PBXBuildFile section */
@@ -142,8 +141,6 @@
 		53BA80FE27A5596A006145E3 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		53BA811B27A7F06B006145E3 /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
 		53BA811D27A7F472006145E3 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
-		53BBDB2F27BBEDA600BE6834 /* Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
-		53BBDB3127BBF07F00BE6834 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		53CF0BBE27C36FEA00E3469F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		53FCD99827BFE93A00C94783 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		89011FC3309D3833E710D055 /* Pods-Ranfoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranfoo.release.xcconfig"; path = "Target Support Files/Pods-Ranfoo/Pods-Ranfoo.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,7 +183,6 @@
 		534D82E727A1ABEB003F5080 = {
 			isa = PBXGroup;
 			children = (
-				53BBDB3127BBF07F00BE6834 /* Secrets.xcconfig */,
 				53B4396727A5579D00F9809D /* Header.h */,
 				534D82F227A1ABEB003F5080 /* Ranfoo */,
 				534D82F127A1ABEB003F5080 /* Products */,
@@ -217,7 +213,6 @@
 				534D830827A2A992003F5080 /* View */,
 				534D830927A2A99C003F5080 /* Controller */,
 				534158AB27ABA8A600AF7024 /* Constants.swift */,
-				53BBDB2F27BBEDA600BE6834 /* Private.swift */,
 			);
 			path = Ranfoo;
 			sourceTree = "<group>";
@@ -492,7 +487,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				534D830D27A2AD25003F5080 /* StoreListViewController.swift in Sources */,
-				53BBDB3027BBEDA600BE6834 /* Private.swift in Sources */,
 				53BA811E27A7F472006145E3 /* ListData.swift in Sources */,
 				53BA811C27A7F06B006145E3 /* ListManager.swift in Sources */,
 				534D82F827A1ABEB003F5080 /* KindViewController.swift in Sources */,

@@ -28,7 +28,7 @@ class ListManager {
     //MARK: - URL, Header 및 객체
     
     let url = "https://dapi.kakao.com/v2/local/search/keyword.json?"
-    let headers: HTTPHeaders = [ "Authorization" : "KakaoAK \(Private.restApi)" ]
+    let headers: HTTPHeaders = [ "Authorization" : "KakaoAK \(Constants.restApi)" ]
     
     var parameters: [String: String] = ["query": ""]
     
