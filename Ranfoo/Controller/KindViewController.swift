@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 import NVActivityIndicatorView
+import SwiftUI
 
 //MARK: - ViewController
 
@@ -25,7 +26,7 @@ class KindViewController: UIViewController {
     
     let locationIndicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 0, height: 0),
                                                     type: .circleStrokeSpin,
-                                                    color: .black,
+                                                    color: .gray,
                                                     padding: 0)
     
     //MARK: - 기본 상수, 변수
@@ -33,8 +34,8 @@ class KindViewController: UIViewController {
     let kindArray = ["한식", "중식", "일식", "양식", "분식", "치킨", "아시아음식", "패스트푸드"]
     var storeArrayNumber = 1...5
     var locationManager = CLLocationManager()
-    var lat: CLLocationDegrees = 128.612027
-    var lon: CLLocationDegrees = 35.890398
+    var lat: CLLocationDegrees = 0.0
+    var lon: CLLocationDegrees = 0.0
     var listManager = ListManager()
     
     
@@ -43,10 +44,21 @@ class KindViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(getLat(_:)), name: Notification.Name("getLat"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getLon(_:)), name: Notification.Name("getLon"), object: nil)
+        
+        if self.lat == 0.0 {    // 이미 값을 받은 후 다시 첫번째 VC를 갔다가 돌아오면 무한 로딩에 빠지는 오류...
+            randomButton.isEnabled = false
+            locationIndicator.startAnimating()
+        } else {
+            locationLoadingMessage.isHidden = true
+            locationIndicator.stopAnimating()
+            randomButton.isEnabled = true
+        }
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
         locationManager.requestWhenInUseAuthorization() // 위치 사용 허용 알림
-        locationManager.requestLocation() // location을 요청하는 동시에 getList()까지 실행
         
         let layout = UICollectionViewFlowLayout()
         kindCollection.collectionViewLayout = layout
@@ -59,19 +71,27 @@ class KindViewController: UIViewController {
         numberStepper.value = 4.0   // UIStepper 객체를 위에 생성해주어야 시작 값을 설정해줄 수 있다.
         numberStepper.maximumValue = 10.0 // 최대 10개 가게를 표시가능
         
-        randomButton.isEnabled = false
-        locationIndicator.startAnimating()
-        
         setObject()
         
-//        let testString = "음식점고기"
-//
-//        if testString.contains("고기") {
-//            print("contains")
-//        }
-        
     }
-
+    
+    //MARK: - notification selector method
+    
+    @objc func getLat(_ notification: Notification){
+        let getLat = notification.object as! CLLocationDegrees
+        print("✅ 위도2: \(getLat)")
+        self.lat = getLat
+        locationLoadingMessage.isHidden = true
+        locationIndicator.stopAnimating()
+        randomButton.isEnabled = true
+    }
+    
+    @objc func getLon(_ notification: Notification){
+        let getLon = notification.object as! CLLocationDegrees
+        print("✅ 경도2: \(getLon)")
+        self.lon = getLon
+    }
+    
 //MARK: - stepper and locationPressed method
     
     @IBAction func numberStepper(_ sender: UIStepper) {
@@ -274,5 +294,4 @@ extension KindViewController {
     }
     
 }
-
 

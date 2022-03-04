@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class MainViewController: UIViewController {
     
@@ -13,8 +14,17 @@ class MainViewController: UIViewController {
     @IBOutlet var collectionViewEx: UIView!    
     @IBOutlet var findButtonEx: UIView!
     @IBOutlet var kindViewButton: UIButton!
+    
+    //MARK: - 각종 상수 변수
+    
+    var locationManager = CLLocationManager()
  
     let kindVC = KindViewController()
+    
+    var lat = CLLocationDegrees()
+    var lon = CLLocationDegrees()
+    
+    //MARK: - viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,19 +32,37 @@ class MainViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .white
         
         setObejctFrame()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리정확도
+        locationManager.requestWhenInUseAuthorization() // 위치 사용 허용 알림
+        locationManager.requestLocation() // location을 요청
        
     }
+    
+    //MARK: - viewWillDisappear
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
+    
+    //MARK: - button
     
     @IBAction func kindViewButtonPressed(_ sender: UIButton) {
         
         performSegue(withIdentifier: Constants.kindViewSegueIdentifier, sender: self)
-        
         self.kindViewButton.layer.opacity = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.kindViewButton.layer.opacity = 1.0
           }
         
     }
+
+}
+
+//MARK: - setObjectFrame method
+
+extension MainViewController {
     
     func setObejctFrame() {
         usingManualBubble.layer.cornerRadius = 20
@@ -58,15 +86,29 @@ class MainViewController: UIViewController {
         findButtonEx.layer.cornerRadius = 10
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+//MARK: - CLLocationManagerDelegate
+
+extension MainViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            locationManager.stopUpdatingLocation()
+            lat = location.coordinate.latitude
+            lon = location.coordinate.longitude
+            print("✅ 위도: \(lat)")
+            print("✅ 경도: \(lon)")
+    
+            NotificationCenter.default.post(name: Notification.Name("getLat"), object: lat)
+            NotificationCenter.default.post(name: NSNotification.Name("getLon"), object: lon)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("❗error")
+    }
+    
+}
+
+
