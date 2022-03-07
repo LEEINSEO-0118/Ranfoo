@@ -99,6 +99,9 @@ extension MainViewController: CLLocationManagerDelegate {
             lon = location.coordinate.longitude
             print("✅ 위도: \(lat)")
             print("✅ 경도: \(lon)")
+            
+            LocationData.lat = lat   // 다음 페이지로 넘어가야 notificaiton center를 통해 값이 옮겨 가는데, 넘어가기 전에 찾기가 완료되면 바로 그 값을 바꾸어 주어야 다음 페이지로 넘어가서 무한 로딩에 빠지지 않는다.
+            LocationData.lon = lon
     
             NotificationCenter.default.post(name: Notification.Name("getLat"), object: lat)
             NotificationCenter.default.post(name: NSNotification.Name("getLon"), object: lon)

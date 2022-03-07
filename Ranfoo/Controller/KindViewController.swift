@@ -8,7 +8,6 @@
 import UIKit
 import CoreLocation
 import NVActivityIndicatorView
-import SwiftUI
 
 //MARK: - ViewController
 
@@ -34,8 +33,6 @@ class KindViewController: UIViewController {
     let kindArray = ["한식", "중식", "일식", "양식", "분식", "치킨", "아시아음식", "패스트푸드"]
     var storeArrayNumber = 1...5
     var locationManager = CLLocationManager()
-    var lat: CLLocationDegrees = 0.0
-    var lon: CLLocationDegrees = 0.0
     var listManager = ListManager()
     
     
@@ -47,7 +44,7 @@ class KindViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(getLat(_:)), name: Notification.Name("getLat"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(getLon(_:)), name: Notification.Name("getLon"), object: nil)
         
-        if self.lat == 0.0 {    // 이미 값을 받은 후 다시 첫번째 VC를 갔다가 돌아오면 무한 로딩에 빠지는 오류...
+        if LocationData.lat == 0.0 {    // 이미 값을 받은 후 다시 첫번째 VC를 갔다가 돌아오면 무한 로딩에 빠지는 오류... // LocationData라는 model을 만들어서 문제를 해결.
             randomButton.isEnabled = false
             locationIndicator.startAnimating()
         } else {
@@ -80,7 +77,7 @@ class KindViewController: UIViewController {
     @objc func getLat(_ notification: Notification){
         let getLat = notification.object as! CLLocationDegrees
         print("✅ 위도2: \(getLat)")
-        self.lat = getLat
+        LocationData.lat = getLat
         locationLoadingMessage.isHidden = true
         locationIndicator.stopAnimating()
         randomButton.isEnabled = true
@@ -89,7 +86,7 @@ class KindViewController: UIViewController {
     @objc func getLon(_ notification: Notification){
         let getLon = notification.object as! CLLocationDegrees
         print("✅ 경도2: \(getLon)")
-        self.lon = getLon
+        LocationData.lon = getLon
     }
     
 //MARK: - stepper and locationPressed method
@@ -144,7 +141,7 @@ class KindViewController: UIViewController {
         
         for keyword in KindData.kindArray {
             group.enter()
-            listManager.getList(lat: lat, lon: lon, keyword: keyword) { result in
+            listManager.getList(lat: LocationData.lat, lon: LocationData.lon, keyword: keyword) { result in
                
                 switch result {
                 case .success(let isTrue):
@@ -224,11 +221,11 @@ extension KindViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             locationManager.stopUpdatingLocation()
-            lat = location.coordinate.latitude
-            lon = location.coordinate.longitude
+            LocationData.lat = location.coordinate.latitude
+            LocationData.lon = location.coordinate.longitude
             print("위치 업데이트!")
-            print("위도 : \(lat)")
-            print("경도 : \(lon)")
+            print("위도 : \(LocationData.lat)")
+            print("경도 : \(LocationData.lon)")
             locationLoadingMessage.isHidden = true
             locationIndicator.stopAnimating()
             randomButton.isEnabled = true
@@ -281,8 +278,6 @@ extension KindViewController {
         randomButtonBubble.layer.shadowOpacity = 0.3
         randomButtonBubble.layer.shadowRadius = 2
         randomButtonBubble.layer.shadowOffset = CGSize(width: 0, height: 3)
-//        randomButtonBubble.layer.borderWidth = 1
-//        randomButtonBubble.layer.borderColor = UIColor.black.cgColor
         
         locationIndicator.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(locationIndicator)
