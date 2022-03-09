@@ -69,10 +69,10 @@ extension MainViewController {
         usingManualBubble.layer.borderWidth = 1
         usingManualBubble.layer.borderColor = UIColor.gray.cgColor
         
-        usingManualBubble.layer.shadowColor = UIColor.black.cgColor
-        usingManualBubble.layer.shadowOpacity = 0.3
-        usingManualBubble.layer.shadowRadius = 5
-        usingManualBubble.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        usingManualBubble.layer.shadowColor = UIColor.black.cgColor
+//        usingManualBubble.layer.shadowOpacity = 0.3
+//        usingManualBubble.layer.shadowRadius = 3
+//        usingManualBubble.layer.shadowOffset = CGSize(width: 0, height: 0)
         
         kindViewButton.layer.cornerRadius = 13
         kindViewButton.layer.borderWidth = 2
