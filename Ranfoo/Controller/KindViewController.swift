@@ -246,14 +246,30 @@ extension KindViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("prepare 진행중")
         if segue.identifier == Constants.storeListSegueIdentifier {
-            let storeListVC = segue.destination as! StoreListViewController
-            
+            let storeListVC = segue.destination as! StoreListViewController            
             print(storeArrayNumber)
             storeListVC.storeArrayNumber = storeArrayNumber
             
+            var preventRepeatArray = [String]()
+            preventRepeatArray.removeAll()
+            
             for _ in storeArrayNumber {
-                let item = ListModel.storeListKeyArray.randomElement()
-                storeListVC.storeArray.append(item ?? "음식종류를 다시 선택해주세요!")
+                if let item = ListModel.storeListKeyArray.randomElement() {
+                    
+                    if preventRepeatArray.contains(item) {
+                        if let item2 = ListModel.storeListKeyArray.randomElement() {
+                            preventRepeatArray.append(item2)
+                            storeListVC.storeArray.append(item2)
+                        } else {}
+                    } else {
+                        preventRepeatArray.append(item)
+                        storeListVC.storeArray.append(item)
+                    }
+                } else {
+                    storeListVC.storeArray.append("음식 종류를 다시 선택해 주세요")
+                }
+                print("✅ 중복방지 \(preventRepeatArray)")
+                
             }
             
             storeListVC.storeNumberInt = Int(numberStepper.value)

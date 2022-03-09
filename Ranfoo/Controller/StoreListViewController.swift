@@ -36,30 +36,44 @@ class StoreListViewController: UIViewController {
         
     }
 
+
     //MARK: - reloadButton
     
     @IBAction func reloadButtonPressed(_ sender: UIButton) {
-        
+
         self.reRandomButton.layer.opacity = 0.5
         self.reRandomButtonBubble.layer.opacity = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.reRandomButton.layer.opacity = 1.0
             self.reRandomButtonBubble.layer.opacity = 1.0
         }
-        
+
         print(storeArrayNumber)
         storeArray.removeAll()
+        var preventRepeatArray = [String]()
+        preventRepeatArray.removeAll()
+
         for _ in storeArrayNumber {
-            let item = ListModel.storeListKeyArray.randomElement()
-            storeArray.append(item ?? "")
+            if let item = ListModel.storeListKeyArray.randomElement() {
+
+                if preventRepeatArray.contains(item) {
+                    if let item2 = ListModel.storeListKeyArray.randomElement() {
+                        preventRepeatArray.append(item2)
+                        storeArray.append(item2)
+                    } else {}
+
+                } else {
+                    preventRepeatArray.append(item)
+                    storeArray.append(item)
+                }
+
+            } else {}
+            print("✅ 중복방지 \(preventRepeatArray)")
+            storeListTableView.reloadData()
         }
-        storeListTableView.reloadData()
-    
     }
 
 }
-
-
 //MARK: - UITableViewDatatSource
 
 extension StoreListViewController: UITableViewDataSource {
@@ -144,11 +158,8 @@ extension StoreListViewController {
             let webViewVC = segue.destination as! WebViewController
             print("✅ \(self.webViewUrl)")
             webViewVC.webViewUrl = self.webViewUrl
-           
         }
-        
-    }
-    
+    }    
 }
 
 //MARK: - setObject
