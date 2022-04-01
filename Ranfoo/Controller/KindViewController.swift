@@ -26,7 +26,7 @@ class KindViewController: UIViewController {
     let locationIndicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 0, height: 0),
                                                     type: .circleStrokeSpin,
                                                     color: .gray,
-                                                    padding: 0)
+                                                    padding: 0) 
     
     //MARK: - 기본 상수, 변수
     
@@ -76,7 +76,7 @@ class KindViewController: UIViewController {
     
     @objc func getLat(_ notification: Notification){
         let getLat = notification.object as! CLLocationDegrees
-        print("✅ 위도2: \(getLat)")
+        print("✅ notification 통한 위도: \(getLat)")
         LocationData.lat = getLat
         locationLoadingMessage.isHidden = true
         locationIndicator.stopAnimating()
@@ -85,7 +85,7 @@ class KindViewController: UIViewController {
     
     @objc func getLon(_ notification: Notification){
         let getLon = notification.object as! CLLocationDegrees
-        print("✅ 경도2: \(getLon)")
+        print("✅ notification 통한 경도: \(getLon)")
         LocationData.lon = getLon
     }
     
